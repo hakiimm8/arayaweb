@@ -4,6 +4,8 @@ Static review preview for PT Araya Internusa, preserving the existing website's 
 
 Preview: https://hakiimm8.github.io/arayaweb/
 
+Saved audit findings, design decisions, verification results and next steps: [Project notes](docs/PROJECT-NOTES.md).
+
 ## Files
 
 - `public/`: the complete published site, with home, Noris and ComAp pages.
