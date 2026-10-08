@@ -2,6 +2,12 @@
 
 Recorded 8 October 2026, Asia/Jakarta. Historical observations from the project session; not a fresh audit or ongoing monitoring.
 
+## Current state and records
+
+The preview now contains five routes: home, marine, industrial, Noris and ComAp. Latest website-content commit `e866993` deployed successfully in [Pages run 37782440114](https://github.com/hakiimm8/arayaweb/actions/runs/37782440114). Brand guides include product indexes, profiles, applications, enquiry briefs and FAQs; published desktop/mobile checks passed. Original logo restored; recreated SVG is superseded. Production remains unchanged.
+
+See [documentation index](README.md), [progress and releases](PROGRESS.md) and [content sources](CONTENT-SOURCES.md). Earlier three-page notes below are historical. Owner WhatsApp is now shared across all five pages.
+
 ## Purpose and decisions
 
 Improve PT Araya Internusa's website and discoverability for Noris and ComAp in Indonesia. The owner states the distributor relationship; authorization/exclusivity, specific supplied models and support commitments remain unverified.
@@ -37,7 +43,7 @@ Main findings:
 - Domain root redirected temporarily (302) to /araya/. Keep /araya/ initially; treat a root migration separately.
 - Live loading overlay blocked exact screenshot comparison during preview work.
 
-## Preview completed
+## Initial preview completed — historical baseline
 
 - Homepage plus distinct Noris and ComAp pages with descriptive titles/headings and contact routes.
 - Responsive layout/menu, Escape close/focus return, keyboard focus, reduced-motion support, optimized local images/font.
@@ -70,7 +76,7 @@ Project experience update, 8 October 2026: the owner supplied the figure of more
 
 Brand emphasis update, 8 October 2026: at the owner's request, homepage and brand pages now highlight Noris Group GmbH instruments/sensors (speed, temperature, pressure, indicators and signal processing), and ComAp engine control, power management and load sharing. Manufacturer descriptions were checked against the sources below. Exact model/feature compatibility and availability remain subject to confirmation; no blanket feature or authorization claim was added.
 
-Edit shared copy/templates in tools/build.py and regenerate with `python tools/build.py`. Check the artifact with `python tools/check.py` and `node --check public/assets/site.js`, then inspect changed desktop/mobile views.
+Edit shared copy/templates in tools/build.py, researched brand data in tools/brand_profiles.py and brand rendering in tools/brand_pages.py; regenerate with `python tools/build.py`. Check the artifact with `python tools/check.py` and `node --check public/assets/site.js`, then inspect changed desktop/mobile views. Update the progress/source records alongside changes.
 
 Full technical findings and handoff notes are stored in the owner's local workspace. This public summary excludes hosting account information, local machine paths, credentials, databases and backups.
 
