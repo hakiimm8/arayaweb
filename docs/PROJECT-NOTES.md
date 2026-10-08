@@ -51,6 +51,8 @@ Only public/ is deployed. Preview uses noindex,nofollow. This does not test Word
 
 ## Next steps
 
+Contact update, 8 October 2026: the owner supplied WhatsApp +62 81326396262 and requested its publication. Added the displayed WhatsApp number and direct https://wa.me/6281326396262 link to the shared contact section on all three preview pages. No WhatsApp message was sent.
+
 1. Review preview content and confirm distributor wording, supplied products, support scope and contacts.
 2. Obtain WordPress administrator/database access and verified files + database backup before production edits.
 3. Apply reviewed content/settings and custom code selectively to WordPress; avoid overwriting a current production database with an older copy.
