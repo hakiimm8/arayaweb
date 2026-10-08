@@ -3,6 +3,8 @@ from pathlib import Path
 from html import escape
 import json
 import hashlib
+from brand_profiles import BRANDS
+from brand_pages import brand_content
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
@@ -147,61 +149,6 @@ HOME = f'''
   </div>
 </div></section>'''
 
-BRANDS = {
-  "noris": {
-    "title": "Noris Instruments & Sensors Distributor Indonesia | Araya Internusa",
-    "description": "Explore Noris instruments, speed, temperature and pressure sensors, and marine automation in Indonesia. Discuss your requirements with PT Araya Internusa.",
-    "label": "NORIS GROUP GmbH IN INDONESIA", "heading": "Noris instruments,<br>sensors & automation.",
-    "intro": "Measurement, indication, and marine control. A local conversation in Indonesia.",
-    "body": "PT Araya Internusa distributes Noris solutions in Indonesia. Discuss your instrument and sensor requirements, measuring signals, and marine automation needs with our team.",
-    "image": "noris-speed-sensors.webp", "alt": "Noris flange and threaded speed sensors, from the manufacturer’s product portfolio",
-    "image_caption": "Speed sensors · Product image: Noris Group GmbH", "image_source": "https://www.noris-group.com/products-and-systems/sensors/speed-sensors/speed-sensor-portfolio",
-    "summary": "Noris Group GmbH develops sensors, signal processing devices, analogue indicators, and marine automation systems. Its measurement portfolio includes speed, temperature, and pressure sensing, alongside alarm, monitoring, and control applications.",
-    "applications": [("Instruments & indicators", "Display measured speed, temperature, and pressure with analogue indicators. Discuss signal processing and the measuring chain your system needs."), ("Speed sensors", "Discuss rotational-speed measurement, signal outputs, installation space, and operating conditions."), ("Temperature & pressure sensors", "Discuss the measurement range, process media, connections, and environmental conditions of your application."), ("Marine automation", "Connect your instrumentation requirements with vessel alarm, monitoring, and control systems.")],
-    "source": "https://www.noris-group.com/industries/machinery-and-equipment", "source_name": "Explore Noris instruments & sensors",
-    "extra_sources": [("Explore Noris marine automation", "https://www.noris-group.com/industries/shipbuilding")],
-    "portfolio": [
-      ("Sensors & measuring points", "Speed · Temperature · Pressure", "Noris sensors provide measurement inputs for machinery and marine applications. Manufacturer examples include FAH13/FAJ13 speed sensors and TA.81/TA.82 temperature sensors.", "Engine and gearbox measurement, water or process monitoring points where the sensor specification is suitable.", "Measuring range, medium, mounting, connector, output signal, and environmental conditions.", "https://www.noris-group.com/products-and-systems/sensors/speed-sensors/speed-sensor-portfolio"),
-      ("Instruments & analogue indicators", "noriMeter · NIR3 / NIQ3 · NIQ31", "Noris analogue instruments display values such as speed, temperature, pressure, and position. The portfolio includes stepper-motor and moving-coil designs, with round or square housings.", "Local indication, control consoles, and instrument-panel replacement or retrofit.", "Input signal, scale, cut-out dimensions, illumination, and the required indication.", "https://www.noris-group.com/products-and-systems/analogue-indicators"),
-      ("Signal processing", "Measuring transducers · Limit switches", "Signal-conditioning devices connect sensors to the wider measuring system. Manufacturer examples include VF5 frequency transducers and VP5/VPT5 temperature transducers.", "Converting measurement signals and providing limit signals to a monitoring or control system.", "Input and output signals, supply voltage, isolation requirements, and switching thresholds.", "https://www.noris-group.com/products-and-systems/signal-processing"),
-      ("Marine alarm, monitoring & control", "noriMos 4 · noriMos 3500", "The noriMos portfolio combines onboard data acquisition, alarm indication, visualisation, and control. Its system architectures are selected to suit the vessel and integration requirements.", "Engine-room AMS, vessel monitoring, and automation retrofit discussions.", "Signal list, operating stations, existing interfaces, redundancy needs, and vessel requirements.", "https://www.noris-group.com/products-and-systems/maritime-system-solutions/alarm-monitoring-and-control"),
-    ],
-    "other": "comap", "other_label": "Explore ComAp engine & power control",
-  },
-  "comap": {
-    "title": "ComAp Engine & Power Control Distributor Indonesia | Araya Internusa",
-    "description": "Explore ComAp engine control, power management and load sharing in Indonesia. Discuss your engine, generator and parallel-power requirements with Araya.",
-    "label": "COMAP CONTROL IN INDONESIA", "heading": "ComAp engine &<br>power control.",
-    "intro": "Engine control. Power management. Load sharing. Discuss your application in Indonesia.",
-    "body": "PT Araya Internusa distributes ComAp solutions in Indonesia. Talk to us about engine control, power management, and load sharing for your marine or generator installation.",
-    "image": "comap-inteligen-500-g2.webp", "alt": "ComAp InteliGen 500 G2 paralleling generator controller, manufacturer product image",
-    "image_caption": "InteliGen 500 G2 · Product image: ComAp", "image_source": "https://www.comap-control.com/products/controllers/paralleling-gen-set-controllers/inteligen/inteligen-500-g2/",
-    "summary": "ComAp’s portfolio includes engine monitoring, protection, and control, plus generator controllers with power-management and load-sharing capabilities. The appropriate controller, configuration, and features depend on your system requirements.",
-    "applications": [("Engine control", "Monitoring, protection, and control for propulsion and auxiliary engines. Discuss your engine interface and operating requirements."), ("Power management", "Coordinate generating sources and load-dependent start/stop. Discuss source priorities and the operating needs of your installation."), ("Load sharing", "Balance demand across parallel generators in proportion to their rated output. Discuss synchronisation and load-sharing requirements.")],
-    "source": "https://www.comap-control.com/products/controllers/", "source_name": "Explore ComAp controllers",
-    "extra_sources": [("Explore power management & load sharing", "https://www.comap-control.com/products/extended-features/extended-feature-load-sharing-power-management/")],
-    "portfolio": [
-      ("Engine control & protection", "InteliDrive family · InteliDrive 700 Marine", "ComAp engine controllers supervise engine operation, measurements, alarms, and protection. InteliDrive 700 Marine is a current manufacturer example for propulsion, auxiliary, emergency, and harbour engine applications.", "Marine engine-control upgrades and integration with existing engine interfaces.", "Engine ECU or conventional signals, RPM input, I/O, operating stations, and protection requirements.", "https://www.comap-control.com/products/controllers/engine-controllers/intelidrive-700-marine/intelidrive-700-marine/"),
-      ("Synchronisation & load sharing", "InteliGen family · InteliGen 500 G2", "InteliGen 500 G2 is a diesel generator paralleling controller for single or multiple generating sets in grid-connected or island operation. Its portfolio includes load/Var sharing and power-management functions.", "Generator synchronisation, auto start/stop, and sharing demand between parallel sets.", "Generator ratings, governor and AVR interfaces, breaker signals, operating sequence, and controller compatibility.", "https://www.comap-control.com/products/controllers/paralleling-gen-set-controllers/inteligen/inteligen-500-g2/"),
-      ("Marine power management", "InteliGen 1000 Marine", "This manufacturer controller coordinates onboard power sources. Depending on the application and software keys, it supports AC or DC power-management arrangements and generator cooperation.", "Vessel generator control, load-dependent source operation, and power-system retrofit discussions.", "Single-line diagram, source types, shore or bus-tie arrangements, load priorities, and required software features.", "https://www.comap-control.com/products/controllers/generator-controllers/inteligen-1000-marine/"),
-    ],
-    "other": "noris", "other_label": "Explore Noris instruments & sensors",
-  },
-}
-
-
-def brand_content(key, data):
-    rows = ''.join(f'<div class="application-row"><span>0{i}</span><h3>{escape(title)}</h3><p>{escape(body)}</p></div>' for i, (title, body) in enumerate(data['applications'], 1))
-    source_links = ''.join(f'<a class="text-link" href="{escape(url, quote=True)}">{escape(label)} {ARROW}</a>' for label, url in [(data['source_name'], data['source']), *data.get('extra_sources', [])])
-    portfolio = ''.join(f'''<article class="portfolio-row"><div><span class="portfolio-number">0{i}</span><h3>{escape(title)}</h3><p class="family-name">{escape(family)}</p></div><div><p>{escape(body)}</p><dl><div><dt>Applications</dt><dd>{escape(application)}</dd></div><div><dt>Selection details</dt><dd>{escape(selection)}</dd></div></dl><a class="text-link" href="{escape(url, quote=True)}">Manufacturer details {ARROW}</a></div></article>''' for i, (title, family, body, application, selection, url) in enumerate(data['portfolio'], 1))
-    return f'''<section class="brand-hero"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span>{'Noris' if key == 'noris' else 'ComAp'}</span></nav><p class="eyebrow">{data['label']}</p><h1>{data['heading']}</h1><p>{data['intro']}</p><a class="button" href="#contact">Discuss your requirements {ARROW}</a></div></section>
-<section class="section"><div class="container brand-overview"><div><p class="eyebrow">YOUR LOCAL POINT OF CONTACT</p><h2>{'Noris' if key == 'noris' else 'ComAp'} solutions<br>in Indonesia.</h2><p class="lead">{data['body']}</p><p>{data['summary']}</p><div class="manufacturer-links">{source_links}</div></div><figure class="product-figure"><img src="../assets/images/{data['image']}" alt="{data['alt']}" width="850" height="650" loading="lazy"><figcaption><a href="{data['image_source']}">{data['image_caption']}</a></figcaption></figure></div></section>
-<section class="section section-muted" id="portfolio"><div class="container"><p class="eyebrow">EXPLORE THE BRAND</p><h2>Inside the {'Noris' if key == 'noris' else 'ComAp'} portfolio.</h2><p class="portfolio-intro">Explore manufacturer product families and application examples. Contact Araya to confirm the suitable model, availability, configuration, and required features for your project.</p><div class="portfolio-list">{portfolio}</div></div></section>
-<section class="section section-muted"><div class="container"><p class="eyebrow">START WITH YOUR APPLICATION</p><h2>What does your system need?</h2><div class="application-list">{rows}</div><div class="equipment-note"><h3>Help us understand your installation.</h3><p>Include the equipment or controller model, system description, project location, and any available drawings in your enquiry.</p></div></div></section>
-<section class="section project-connections"><div class="container"><p class="eyebrow">FROM PRODUCT TO PROJECT</p><h2>Start with the work you need.</h2><div class="connection-grid"><a href="../marine/"><h3>Marine project scopes</h3><p>{'AMS, measurement, instruments, and system retrofit.' if key == 'noris' else 'Engine control, generator synchronisation, auto start/stop, and power management.'}</p><span class="text-link">Explore marine work {ARROW}</span></a><a href="../industrial/"><h3>Industrial project scopes</h3><p>{'Machine measurement, process instruments, signal interfaces, and control panels.' if key == 'noris' else 'Generator control, synchronisation, load sharing, and automation integration.'}</p><span class="text-link">Explore industrial work {ARROW}</span></a></div></div></section>
-<section class="related container"><a class="text-link" href="../{data['other']}/">{data['other_label']} {ARROW}</a><a href="../index.html#brands">Back to our solutions</a></section>'''
-
-
 def sector_content(key, data):
     rows = ''.join(f'<article class="scope-detail" id="{anchor}"><span class="portfolio-number">0{i}</span><h3>{escape(title)}</h3><p>{escape(body)}</p></article>' for i, (anchor, title, body) in enumerate(data['groups'], 1))
     other = 'industrial' if key == 'marine' else 'marine'
@@ -218,7 +165,7 @@ def main():
     for key, data in BRANDS.items():
         folder = PUBLIC / key
         folder.mkdir(exist_ok=True)
-        (folder / "index.html").write_text(shell(data['title'], data['description'], brand_content(key, data), key + '/'), encoding="utf-8")
+        (folder / "index.html").write_text(shell(data['title'], data['description'], brand_content(key, data, ARROW), key + '/'), encoding="utf-8")
     for key, data in SECTORS.items():
         folder = PUBLIC / key
         folder.mkdir(exist_ok=True)

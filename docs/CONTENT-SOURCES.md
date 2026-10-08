@@ -40,3 +40,22 @@ Two unchanged manufacturer WebP assets are stored locally for consistent preview
 - `public/assets/images/comap-inteligen-500-g2.webp`: ComAp InteliGen 500 G2 image. Download URL: https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/parallel%20gen-set%20controllers/inteligen/web%20images/optimized%20web%20images/ineligen_500_g2_main.png?f=WebP&h=650&w=850
 
 Optional refetch command: `python tools/fetch_brand_assets.py`. Normal HTML build and deployment require no manufacturer-network requests.
+
+## Expanded dedicated brand guides — 8 October 2026
+
+The owner asked for research and fuller, separate brand pages within Araya's website. The `/noris/` and `/comap/` routes now have distinct manufacturer profiles, indexed product families, application guidance, enquiry checklists, and three FAQs each. Product summaries are written in original language and cite the manufacturer's relevant page. Images remain the two credited, unchanged manufacturer assets above. Existing Araya styling and original logo are retained.
+
+Additional primary sources checked:
+
+- [Noris company history](https://www.noris-group.com/company/company-history): foundation in Nuremberg in 1925 and progression from instrumentation to automation.
+- [Noris sensors](https://www.noris-group.com/products-and-systems/sensors): portfolio categories.
+- [Noris temperature sensing](https://www.noris-group.com/products-and-systems/sensors/temperature-sensors): Pt100/Pt1000, thermocouples, thermistors and TA.81/TA.82 examples.
+- [Noris pressure sensing](https://www.noris-group.com/products-and-systems/sensors/pressure-sensors): PAX9 and VD61 examples. No blanket pressure rating or material compatibility is asserted.
+- [Noris analogue indicators](https://www.noris-group.com/products-and-systems/analogue-indicators): noriMeter stepper-motor and SIR3/SIQ3 moving-coil families.
+- [Noris noriStar propulsion control](https://www.noris-group.com/products-and-systems/maritime-system-solutions/propulsion-control): coordinated bridge/local propulsion control and supported propulsion arrangements, subject to configuration.
+- [ComAp company history](https://www.comap-control.com/about/35-years-comap/) and [anniversary announcement](https://www.comap-control.com/insights/the-heart-of-smart-control-marks-its-35th-anniversary/): foundation in Prague in 1991 and engine/power-control portfolio. Volatile employee, revenue and distributor statistics are omitted.
+- [InteliLite 4 AMF 25](https://www.comap-control.com/products/controllers/single-gen-set-controllers/intelilite/intelilite-4-amf-25/): single-set standby/prime-power controller, separate from paralleling applications.
+- [InteliSCADA](https://www.comap-control.com/products/software-tools/monitoring-tools/pc-monitoring-tools/inteliscada/): local PC-based visualisation, monitoring and trends.
+- [WebSupervisor](https://www.comap-control.com/products/software-tools/monitoring-tools/online-monitoring-tools/websupervisor/): cloud-based device/fleet monitoring. Copy notes connectivity and subscription dependencies.
+
+Previously listed InteliDrive 700 Marine, InteliGen 500 G2, InteliGen 1000 Marine, noriMos, speed sensor and signal-processing pages were retained as individual product references. Features, approval requirements, legacy migration, controller mixing and substitutions require application review. Enquiry and replacement checklists are practical guidance, not manufacturer approval or a promise of stock, warranty, certification or engineering outcome. No new Araya partnership, exclusivity or named case-study claims were added. The preview remains noindex and does not establish a measured production SEO gain.

@@ -83,3 +83,7 @@ Full technical findings and handoff notes are stored in the owner's local worksp
 - https://www.comap-control.com/products/extended-features/extended-feature-load-sharing-power-management/
 - https://developer.wordpress.org/advanced-administration/upgrade/migrating/
 - https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
+
+## Dedicated brand-page expansion — 8 October 2026
+
+Owner requested further manufacturer research and complete individual brand pages. Noris now has seven indexed product areas: speed, temperature and pressure sensors; analogue instruments; signal processing; noriMos monitoring; and noriStar propulsion control. ComAp now has six: InteliDrive engine supervision, InteliGen paralleling/load sharing, marine power management, InteliLite single-set/standby control, InteliSCADA and WebSupervisor. Each page has a manufacturer profile, real product hero image, section navigation, applications, an Araya enquiry brief, and three accessible native details/summary FAQs. All facts and model examples are linked to manufacturer references; see CONTENT-SOURCES.md. Original Araya artwork and existing style retained. No product images or logos were generated. Preview remains noindex, production unchanged. Brand copy/layout is maintained in tools/brand_profiles.py and tools/brand_pages.py, rendered by tools/build.py.
