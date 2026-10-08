@@ -17,7 +17,7 @@ def shell(title, description, content, route=""):
     schema = {
         "@context": "https://schema.org", "@type": "Organization",
         "name": "PT Araya Internusa", "url": "https://arayainternusa.co.id/araya/",
-        "logo": BASE + "assets/images/araya-logo.png",
+        "logo": BASE + "assets/images/araya-logo-v2.svg",
         "email": "cs@arayainternusa.com", "telephone": "+62-31-7877990",
     }
     return f'''<!doctype html>
@@ -44,7 +44,7 @@ def shell(title, description, content, route=""):
 <header class="site-header">
   <div class="utility"><div class="container utility-inner"><span>Gateway Citra Harmoni · Sidoarjo, Indonesia</span><a href="mailto:cs@arayainternusa.com">cs@arayainternusa.com</a><a href="tel:+62317877990">+62 (031) 7877990</a></div></div>
   <div class="container navigation">
-    <a class="brand" href="{home}" aria-label="PT Araya Internusa home"><img src="{prefix}assets/images/araya-logo.png" alt="PT Araya Internusa" width="238" height="52"></a>
+    <a class="brand" href="{home}" aria-label="PT Araya Internusa home"><img src="{prefix}assets/images/araya-logo-v2.svg" alt="PT Araya Internusa" width="290" height="64"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation"><span>Menu</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
       {nav('Home', '')}{nav('About Us', '#about')}{nav('Our Services', '#services')}{nav('Noris & ComAp', '#brands')}{nav('Our Projects', '#projects')}
@@ -56,7 +56,7 @@ def shell(title, description, content, route=""):
 <section class="contact" id="contact" aria-labelledby="contact-heading">
   <div class="container contact-intro"><div><p class="eyebrow">GET IN TOUCH</p><h2 id="contact-heading">Let’s find the right solution.</h2><p>Tell us about your equipment, application, and project location.</p></div><a class="button" href="mailto:cs@arayainternusa.com">Discuss your project {ARROW}</a></div>
   <div class="container footer-grid">
-    <div class="footer-company"><img src="{prefix}assets/images/araya-logo.png" alt="PT Araya Internusa" width="238" height="52" loading="lazy"><p>Total solutions for engineering and automation.</p><a class="text-link light" href="https://arayainternusa.co.id/araya/">Visit our current website {ARROW}</a></div>
+    <div class="footer-company"><img src="{prefix}assets/images/araya-logo-v2.svg" alt="PT Araya Internusa" width="290" height="64" loading="lazy"><p>Total solutions for engineering and automation.</p><a class="text-link light" href="https://arayainternusa.co.id/araya/">Visit our current website {ARROW}</a></div>
     <div><h3>Explore Araya</h3><a href="{home}#about">About Us</a><a href="{home}#services">Our Services</a><a href="{prefix}noris/">Noris Group GmbH</a><a href="{prefix}comap/">ComAp Control</a></div>
     <div><h3>Office Address</h3><p>Gateway Citra Harmoni RKG 32–33<br>Taman, Sidoarjo<br>Jawa Timur 61257, Indonesia</p></div>
     <div><h3>Contact Us</h3><a href="mailto:cs@arayainternusa.com">cs@arayainternusa.com</a><a href="tel:+62317877990">+62 (031) 7877990</a><a href="https://wa.me/6281326396262">WhatsApp: +62 813 2639 6262</a><p class="contact-note">Share your system details with our team.</p></div>

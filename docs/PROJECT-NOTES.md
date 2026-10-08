@@ -62,6 +62,8 @@ Contact update, 8 October 2026: the owner supplied WhatsApp +62 81326396262 and 
 
 ## Maintenance
 
+Logo recreation, 8 October 2026: the original PNG had an opaque #ee5c03 background, while the header block used #ff6200. At the owner's request, recreated the logo as a transparent SVG with an outlined two-line wordmark and a clean interpretation of the circular monogram. Header orange matched to #ee5c03. Original PNG retained; header, footer and Organization logo use araya-logo-v2.svg. Text is converted to paths for font-independent display. The vector is a recreation, not an exact trace or a source trademark master. Rebuild with Windows PowerShell tools/build_logo.ps1 (Arial Bold outlines via System.Drawing). Two ImageGen attempts were rejected because their transparency introduced rough artifacts; neither was published.
+
 Project experience update, 8 October 2026: the owner supplied the figure of more than 1,500 projects and coverage including Sumatra, Jawa, Kalimantan, Sulawesi, and Papua. The homepage now presents “1,500+ projects across Indonesia” and these five regions. This is an owner-provided aggregate; no per-region counts or individual project/client claims were added.
 
 Brand emphasis update, 8 October 2026: at the owner's request, homepage and brand pages now highlight Noris Group GmbH instruments/sensors (speed, temperature, pressure, indicators and signal processing), and ComAp engine control, power management and load sharing. Manufacturer descriptions were checked against the sources below. Exact model/feature compatibility and availability remain subject to confirmation; no blanket feature or authorization claim was added.
