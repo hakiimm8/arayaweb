@@ -8,7 +8,7 @@ Saved audit findings, design decisions, verification results and next steps: [Pr
 
 ## Files
 
-- `public/`: the complete published site, with home, Noris and ComAp pages.
+- `public/`: the complete published site, with home, marine, industrial, Noris and ComAp pages.
 - `tools/build.py`: shared HTML template and page copy. Run `python tools/build.py` after editing.
 - `.github/workflows/pages.yml`: publishes `public/` on push to main or manual dispatch. No PR triggers.
 
@@ -18,7 +18,9 @@ To preview locally, serve `public/` with a static HTTP server. WordPress and PHP
 
 This is a public design preview with noindex,nofollow metadata. The production WordPress site remains at https://arayainternusa.co.id/araya/. Preview hosting performance does not represent production WordPress performance.
 
-Existing Araya logo, photographs, company history, and displayed business contacts come from the owner's supplied website files and live site. Email/phone destinations have been aligned with their displayed labels; deliverability has not been tested. No enquiry is automatically sent. Some service-detail links intentionally open the existing production pages.
+Existing Araya logo, engineering photographs, company history, and displayed business contacts come from the owner's supplied website files and live site. Email/phone destinations have been aligned with their displayed labels; deliverability has not been tested. No enquiry is automatically sent. Service and brand links stay within the preview, with separate links to manufacturer references and the current website.
+
+Marine and industrial pages describe project scopes provided by the owner and the existing service pages. They are capability descriptions, not invented named case studies. Product families, example models, and two manufacturer product images have source attribution in [Content sources](docs/CONTENT-SOURCES.md). Model availability and project suitability require discussion with Araya.
 
 The owner states that Araya distributes Noris and ComAp in Indonesia. Authorization, exclusivity, specific product availability, warranties and certifications are not asserted.
 
