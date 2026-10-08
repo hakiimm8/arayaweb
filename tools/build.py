@@ -57,7 +57,7 @@ def shell(title, description, content, route=""):
   <div class="container contact-intro"><div><p class="eyebrow">GET IN TOUCH</p><h2 id="contact-heading">Let’s find the right solution.</h2><p>Tell us about your equipment, application, and project location.</p></div><a class="button" href="mailto:cs@arayainternusa.com">Discuss your project {ARROW}</a></div>
   <div class="container footer-grid">
     <div class="footer-company"><img src="{prefix}assets/images/araya-logo.png" alt="PT Araya Internusa" width="238" height="52" loading="lazy"><p>Total solutions for engineering and automation.</p><a class="text-link light" href="https://arayainternusa.co.id/araya/">Visit our current website {ARROW}</a></div>
-    <div><h3>Explore Araya</h3><a href="{home}#about">About Us</a><a href="{home}#services">Our Services</a><a href="{prefix}noris/">Noris Automation</a><a href="{prefix}comap/">ComAp Control</a></div>
+    <div><h3>Explore Araya</h3><a href="{home}#about">About Us</a><a href="{home}#services">Our Services</a><a href="{prefix}noris/">Noris Group GmbH</a><a href="{prefix}comap/">ComAp Control</a></div>
     <div><h3>Office Address</h3><p>Gateway Citra Harmoni RKG 32–33<br>Taman, Sidoarjo<br>Jawa Timur 61257, Indonesia</p></div>
     <div><h3>Contact Us</h3><a href="mailto:cs@arayainternusa.com">cs@arayainternusa.com</a><a href="tel:+62317877990">+62 (031) 7877990</a><a href="https://wa.me/6281326396262">WhatsApp: +62 813 2639 6262</a><p class="contact-note">Share your system details with our team.</p></div>
   </div>
@@ -93,47 +93,51 @@ HOME = f'''
 <section class="section" id="brands"><div class="container">
   <div class="section-heading"><div><p class="eyebrow">NORIS &amp; COMAP IN INDONESIA</p><h2>Specialist solutions.<br>A local point of contact.</h2></div><p>PT Araya Internusa distributes Noris and ComAp solutions in Indonesia. Talk to us about your equipment and application.</p></div>
   <div class="brand-grid">
-    <article class="brand-panel"><div class="brand-name">NORIS<span>01 / MARINE AUTOMATION</span></div><h3>Monitoring. Control. Clarity.</h3><p>Explore marine alarm, monitoring, and control applications, and discuss your Noris requirements with Araya.</p><a class="text-link" href="./noris/">Explore Noris in Indonesia {ARROW}</a></article>
-    <article class="brand-panel"><div class="brand-name">ComAp<span>02 / GENERATOR CONTROL</span></div><h3>Control at the heart of power.</h3><p>Explore generator and power-control applications, and discuss the needs of your ComAp installation with Araya.</p><a class="text-link" href="./comap/">Explore ComAp in Indonesia {ARROW}</a></article>
+    <article class="brand-panel"><div class="brand-name">NORIS<span>NORIS GROUP GmbH</span></div><h3>Instruments &amp; sensors.<br>Marine automation.</h3><p>Speed, temperature, and pressure measurement. Indicators and signal processing. Explore Noris instrumentation, sensors, and marine monitoring solutions with Araya.</p><a class="text-link" href="./noris/">Explore Noris in Indonesia {ARROW}</a></article>
+    <article class="brand-panel"><div class="brand-name">ComAp<span>ENGINE &amp; POWER CONTROL</span></div><h3>Engine control.<br>Power management.<br>Load sharing.</h3><p>Engine monitoring and protection, coordination of generating sources, and load sharing between parallel generators. Discuss your ComAp application with Araya.</p><a class="text-link" href="./comap/">Explore ComAp in Indonesia {ARROW}</a></article>
   </div>
 </div></section>
 <section class="section projects" id="projects"><div class="container">
-  <div class="section-heading"><div><p class="eyebrow">OUR PROJECTS</p><h2>Closer to the work.<br>Closer to the solution.</h2></div><p>A look inside the marine environments and systems featured in Araya’s project photography.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">OUR PROJECTS</p><h2>Project experience<br>across Indonesia.</h2></div><p>From marine environments to industrial systems, our work reaches Sumatra, Jawa, Kalimantan, Sulawesi, and Papua.</p></div>
+  <div class="project-reach"><div class="project-total"><strong>1,500+</strong><span>projects across Indonesia</span></div><div class="project-coverage"><h3>Across the archipelago</h3><ul><li>Sumatra</li><li>Jawa</li><li>Kalimantan</li><li>Sulawesi</li><li>Papua</li></ul></div></div>
   <div class="project-grid"><figure><img src="./assets/images/control-room.webp" alt="Noris monitoring equipment installed in a marine control console" width="1400" height="840" loading="lazy"><figcaption><span>Marine automation</span><h3>Inside the control room</h3></figcaption></figure><figure><img src="./assets/images/team.webp" alt="Araya’s technical team working around marine engine equipment" width="600" height="600" loading="lazy"><figcaption><span>Technical services</span><h3>Alongside your equipment</h3></figcaption></figure></div>
 </div></section>'''
 
 BRANDS = {
   "noris": {
-    "title": "Noris Automation Distributor Indonesia | PT Araya Internusa",
-    "description": "Discuss Noris marine automation, alarm, monitoring and control requirements in Indonesia with PT Araya Internusa in Sidoarjo.",
-    "label": "NORIS AUTOMATION IN INDONESIA", "heading": "Noris automation.<br>For your marine systems.",
-    "intro": "A local conversation about marine monitoring and control.",
-    "body": "PT Araya Internusa distributes Noris solutions in Indonesia. Tell us about your vessel, existing installation, and project requirements so we can discuss the appropriate next steps.",
+    "title": "Noris Instruments & Sensors Distributor Indonesia | Araya Internusa",
+    "description": "Explore Noris instruments, speed, temperature and pressure sensors, and marine automation in Indonesia. Discuss your requirements with PT Araya Internusa.",
+    "label": "NORIS GROUP GmbH IN INDONESIA", "heading": "Noris instruments,<br>sensors & automation.",
+    "intro": "Measurement, indication, and marine control. A local conversation in Indonesia.",
+    "body": "PT Araya Internusa distributes Noris solutions in Indonesia. Discuss your instrument and sensor requirements, measuring signals, and marine automation needs with our team.",
     "image": "control-room.webp", "alt": "Noris monitoring display in a vessel’s control room, from Araya’s project photographs",
-    "summary": "Noris develops automation and sensor solutions for shipbuilding. Its marine portfolio covers alarm, monitoring, and control, as well as propulsion control and power management.",
-    "applications": [("Alarm & monitoring", "Discuss the signals, alarms, and operating information your vessel needs to monitor."), ("Marine control", "Discuss the existing control architecture and the interfaces involved in your project."), ("System requirements", "Share your equipment details and documentation to help scope the conversation.")],
-    "source": "https://www.noris-group.com/industries/shipbuilding", "source_name": "Explore the Noris marine portfolio",
-    "other": "comap", "other_label": "Explore ComAp generator control",
+    "summary": "Noris Group GmbH develops sensors, signal processing devices, analogue indicators, and marine automation systems. Its measurement portfolio includes speed, temperature, and pressure sensing, alongside alarm, monitoring, and control applications.",
+    "applications": [("Instruments & indicators", "Display measured speed, temperature, and pressure with analogue indicators. Discuss signal processing and the measuring chain your system needs."), ("Speed sensors", "Discuss rotational-speed measurement, signal outputs, installation space, and operating conditions."), ("Temperature & pressure sensors", "Discuss the measurement range, process media, connections, and environmental conditions of your application."), ("Marine automation", "Connect your instrumentation requirements with vessel alarm, monitoring, and control systems.")],
+    "source": "https://www.noris-group.com/industries/machinery-and-equipment", "source_name": "Explore Noris instruments & sensors",
+    "extra_sources": [("Explore Noris marine automation", "https://www.noris-group.com/industries/shipbuilding")],
+    "other": "comap", "other_label": "Explore ComAp engine & power control",
   },
   "comap": {
-    "title": "ComAp Distributor Indonesia | PT Araya Internusa",
-    "description": "Discuss ComAp generator controllers, power control and marine applications in Indonesia with PT Araya Internusa. Share your installation requirements.",
-    "label": "COMAP CONTROL IN INDONESIA", "heading": "ComAp control.<br>For your power systems.",
-    "intro": "Understand your installation. Discuss the right control approach.",
-    "body": "PT Araya Internusa distributes ComAp solutions in Indonesia. Tell us about your generator or power installation, operating needs, and existing controller so we can discuss your requirements.",
+    "title": "ComAp Engine & Power Control Distributor Indonesia | Araya Internusa",
+    "description": "Explore ComAp engine control, power management and load sharing in Indonesia. Discuss your engine, generator and parallel-power requirements with Araya.",
+    "label": "COMAP CONTROL IN INDONESIA", "heading": "ComAp engine &<br>power control.",
+    "intro": "Engine control. Power management. Load sharing. Discuss your application in Indonesia.",
+    "body": "PT Araya Internusa distributes ComAp solutions in Indonesia. Talk to us about engine control, power management, and load sharing for your marine or generator installation.",
     "image": "team.webp", "alt": "Araya technicians working around marine machinery; illustrative engineering photograph, not a ComAp product image",
-    "summary": "ComAp offers controllers for single and paralleling generator sets, engines, marine applications, and energy installations. Controller selection depends on the application and system requirements.",
-    "applications": [("Generator control", "Discuss standby or continuous-power requirements and the controller used in your installation."), ("Paralleling & power", "Discuss how generators and other power sources operate together in your system."), ("Marine applications", "Discuss engine or generator-control requirements for your vessel.")],
+    "summary": "ComAp’s portfolio includes engine monitoring, protection, and control, plus generator controllers with power-management and load-sharing capabilities. The appropriate controller, configuration, and features depend on your system requirements.",
+    "applications": [("Engine control", "Monitoring, protection, and control for propulsion and auxiliary engines. Discuss your engine interface and operating requirements."), ("Power management", "Coordinate generating sources and load-dependent start/stop. Discuss source priorities and the operating needs of your installation."), ("Load sharing", "Balance demand across parallel generators in proportion to their rated output. Discuss synchronisation and load-sharing requirements.")],
     "source": "https://www.comap-control.com/products/controllers/", "source_name": "Explore ComAp controllers",
-    "other": "noris", "other_label": "Explore Noris marine automation",
+    "extra_sources": [("Explore power management & load sharing", "https://www.comap-control.com/products/extended-features/extended-feature-load-sharing-power-management/")],
+    "other": "noris", "other_label": "Explore Noris instruments & sensors",
   },
 }
 
 
 def brand_content(key, data):
     rows = ''.join(f'<div class="application-row"><span>0{i}</span><h3>{escape(title)}</h3><p>{escape(body)}</p></div>' for i, (title, body) in enumerate(data['applications'], 1))
+    source_links = ''.join(f'<a class="text-link" href="{escape(url, quote=True)}">{escape(label)} {ARROW}</a>' for label, url in [(data['source_name'], data['source']), *data.get('extra_sources', [])])
     return f'''<section class="brand-hero"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span>{'Noris' if key == 'noris' else 'ComAp'}</span></nav><p class="eyebrow">{data['label']}</p><h1>{data['heading']}</h1><p>{data['intro']}</p><a class="button" href="#contact">Discuss your requirements {ARROW}</a></div></section>
-<section class="section"><div class="container brand-overview"><div><p class="eyebrow">YOUR LOCAL POINT OF CONTACT</p><h2>{'Noris' if key == 'noris' else 'ComAp'} solutions<br>in Indonesia.</h2><p class="lead">{data['body']}</p><p>{data['summary']}</p><a class="text-link" href="{data['source']}">{data['source_name']} {ARROW}</a><p class="manufacturer-note">Manufacturer information. Contact Araya to confirm the products and services available for your project.</p></div><figure><img src="../assets/images/{data['image']}" alt="{data['alt']}" width="700" height="600" loading="lazy"><figcaption>From Araya’s marine engineering photography.</figcaption></figure></div></section>
+<section class="section"><div class="container brand-overview"><div><p class="eyebrow">YOUR LOCAL POINT OF CONTACT</p><h2>{'Noris' if key == 'noris' else 'ComAp'} solutions<br>in Indonesia.</h2><p class="lead">{data['body']}</p><p>{data['summary']}</p><div class="manufacturer-links">{source_links}</div><p class="manufacturer-note">Manufacturer information. Contact Araya to confirm compatible products, features, and services for your project.</p></div><figure><img src="../assets/images/{data['image']}" alt="{data['alt']}" width="700" height="600" loading="lazy"><figcaption>From Araya’s marine engineering photography.</figcaption></figure></div></section>
 <section class="section section-muted"><div class="container"><p class="eyebrow">START WITH YOUR APPLICATION</p><h2>What does your system need?</h2><div class="application-list">{rows}</div><div class="equipment-note"><h3>Help us understand your installation.</h3><p>Include the equipment or controller model, system description, project location, and any available drawings in your enquiry.</p></div></div></section>
 <section class="related container"><a class="text-link" href="../{data['other']}/">{data['other_label']} {ARROW}</a><a href="../index.html#brands">Back to our solutions</a></section>'''
 

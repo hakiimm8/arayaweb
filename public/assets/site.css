@@ -18,3 +18,7 @@
 .projects .eyebrow,.contact .eyebrow,.brand-hero .eyebrow{color:#ff7a24}
 .site-header{position:sticky;top:-38px}
 @media(max-width:680px){.site-header{top:-32px}}
+.brand-panel{display:flex;flex-direction:column}.brand-panel>.text-link{margin-top:auto}
+.manufacturer-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:25px}.brand-overview .manufacturer-links .text-link{margin-top:0}
+.project-reach{display:grid;grid-template-columns:1fr 1.4fr;align-items:center;gap:48px;border-top:1px solid #ffffff30;border-bottom:1px solid #ffffff30;padding:32px 0;margin-bottom:40px}.project-total strong{display:block;font-size:clamp(56px,7vw,88px);line-height:1.1;letter-spacing:-.05em;color:#ff7a24}.project-total span{display:block;margin-top:8px;font-size:18px}.project-coverage h3{font-size:20px;margin:0 0 16px}.project-coverage ul{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0}.project-coverage li{border:1px solid #ffffff40;padding:8px 14px;font-size:16px}@media(max-width:680px){.project-reach{grid-template-columns:1fr;gap:28px}}
+.projects .project-coverage h3{color:#fff}

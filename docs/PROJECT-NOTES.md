@@ -62,6 +62,10 @@ Contact update, 8 October 2026: the owner supplied WhatsApp +62 81326396262 and 
 
 ## Maintenance
 
+Project experience update, 8 October 2026: the owner supplied the figure of more than 1,500 projects and coverage including Sumatra, Jawa, Kalimantan, Sulawesi, and Papua. The homepage now presents “1,500+ projects across Indonesia” and these five regions. This is an owner-provided aggregate; no per-region counts or individual project/client claims were added.
+
+Brand emphasis update, 8 October 2026: at the owner's request, homepage and brand pages now highlight Noris Group GmbH instruments/sensors (speed, temperature, pressure, indicators and signal processing), and ComAp engine control, power management and load sharing. Manufacturer descriptions were checked against the sources below. Exact model/feature compatibility and availability remain subject to confirmation; no blanket feature or authorization claim was added.
+
 Edit shared copy/templates in tools/build.py and regenerate with `python tools/build.py`. Check the artifact with `python tools/check.py` and `node --check public/assets/site.js`, then inspect changed desktop/mobile views.
 
 Full technical findings and handoff notes are stored in the owner's local workspace. This public summary excludes hosting account information, local machine paths, credentials, databases and backups.
@@ -69,6 +73,9 @@ Full technical findings and handoff notes are stored in the owner's local worksp
 ## Sources
 
 - https://www.noris-group.com/industries/shipbuilding
+- https://www.noris-group.com/industries/machinery-and-equipment
 - https://www.comap-control.com/products/controllers/
+- https://uk.comap-control.com/application-areas/marine/engine-control/
+- https://www.comap-control.com/products/extended-features/extended-feature-load-sharing-power-management/
 - https://developer.wordpress.org/advanced-administration/upgrade/migrating/
 - https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
