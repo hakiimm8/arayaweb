@@ -11,11 +11,14 @@ PUBLIC = ROOT / "public"
 BASE = "https://hakiimm8.github.io/arayaweb/"
 ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>'
 CSS_VERSION = hashlib.sha256((PUBLIC / 'assets/site.css').read_bytes()).hexdigest()[:10]
+JS_VERSION = hashlib.sha256((PUBLIC / 'assets/site.js').read_bytes()).hexdigest()[:10]
 
 
 def shell(title, description, content, route=""):
     prefix = "../" if route else "./"
     home = prefix + "index.html"
+    brand_links = ''.join(f'<li><a href="{prefix}{key}/">{escape(data["name"])}</a></li>' for key, data in BRANDS.items())
+    brand_footer_links = ''.join(f'<a href="{prefix}{key}/">{escape(data["name"])}</a>' for key, data in BRANDS.items())
     def nav(label, target):
         return f'<a href="{home}{target}">{label}</a>'
     schema = {
@@ -40,7 +43,7 @@ def shell(title, description, content, route=""):
   <link rel="icon" href="{prefix}assets/images/favicon.png">
   <link rel="preload" href="{prefix}assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{prefix}assets/site.css?v={CSS_VERSION}">
-  <script src="{prefix}assets/site.js" defer></script>
+  <script src="{prefix}assets/site.js?v={JS_VERSION}" defer></script>
   <script type="application/ld+json">{json.dumps(schema)}</script>
 </head>
 <body>
@@ -51,7 +54,7 @@ def shell(title, description, content, route=""):
     <a class="brand" href="{home}" aria-label="PT Araya Internusa home"><img src="{prefix}assets/images/araya-logo-original.png" alt="PT Araya Internusa" width="291" height="52"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation"><span>Menu</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
-      {nav('Home', '')}{nav('About Us', '#about')}{nav('Our Services', '#services')}<a href="{prefix}noris/">Noris</a><a href="{prefix}comap/">ComAp</a>{nav('Our Projects', '#projects')}
+      {nav('Home', '')}{nav('About Us', '#about')}{nav('Our Services', '#services')}<details class="brand-menu"><summary>Brand Partners<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><ul class="brand-dropdown">{brand_links}</ul></details>{nav('Our Projects', '#projects')}
       <a class="nav-contact" href="{home}#contact">Contact Us {ARROW}</a>
     </nav>
   </div>
@@ -61,7 +64,7 @@ def shell(title, description, content, route=""):
   <div class="container contact-intro"><div><p class="eyebrow">GET IN TOUCH</p><h2 id="contact-heading">Let’s find the right solution.</h2><p>Tell us about your equipment, application, and project location.</p></div><a class="button" href="mailto:cs@arayainternusa.com">Discuss your project {ARROW}</a></div>
   <div class="container footer-grid">
     <div class="footer-company"><img src="{prefix}assets/images/araya-logo-original.png" alt="PT Araya Internusa" width="291" height="52" loading="lazy"><p>Total solutions for engineering and automation.</p><a class="text-link light" href="https://arayainternusa.co.id/araya/">Visit our current website {ARROW}</a></div>
-    <div><h3>Explore Araya</h3><a href="{home}#about">About Us</a><a href="{prefix}marine/">Marine projects</a><a href="{prefix}industrial/">Industrial projects</a><a href="{prefix}noris/">Noris Group GmbH</a><a href="{prefix}comap/">ComAp Control</a></div>
+    <div><h3>Explore Araya</h3><a href="{home}#about">About Us</a><a href="{prefix}marine/">Marine projects</a><a href="{prefix}industrial/">Industrial projects</a>{brand_footer_links}</div>
     <div><h3>Office Address</h3><p>Gateway Citra Harmoni RKG 32–33<br>Taman, Sidoarjo<br>Jawa Timur 61257, Indonesia</p></div>
     <div><h3>Contact Us</h3><a href="mailto:cs@arayainternusa.com">cs@arayainternusa.com</a><a href="tel:+62317877990">+62 (031) 7877990</a><a href="https://wa.me/6281326396262">WhatsApp: +62 813 2639 6262</a><p class="contact-note">Share your system details with our team.</p></div>
   </div>
