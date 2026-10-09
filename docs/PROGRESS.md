@@ -6,7 +6,9 @@ Read and rendered both pages of the owner's supplied brochure; explained the onb
 
 Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing monitoring or fresh production audit is implied.
 
-## Content restructure — 9 October 2026 (branch `ccr-6d42fd98-9p3phn`, not yet deployed)
+## Content restructure — 9 October 2026
+
+Deployed from `main` at [`541345c`](https://github.com/hakiimm8/arayaweb/commit/541345c62dee0caf8a15f0d7c3ae8ede2b389291) in [Pages run 37896406947](https://github.com/hakiimm8/arayaweb/actions/runs/37896406947), which succeeded. All six routes, `sitemap.xml` and the new assets return 200 on the published preview. The published logo strip loads all 14 images and animates at 1440px and 390px; it stays static with reduced motion.
 
 Owner direction: keep the existing design, change content only; English only; show what Araya does and its clients instead of per-project case studies; present Araya as multi-brand, with Noris and ComAp as featured partners; keep the long brand guides but tidy their content; improve SEO. A redesign was trialled and rejected ("too mainstream"); none of it ships.
 
@@ -22,11 +24,11 @@ Owner direction: keep the existing design, change content only; English only; sh
 ## Current release
 
 - **Preview:** https://hakiimm8.github.io/arayaweb/
-- **Website-content commit:** [`f19cc41c7c599d42f6d2b165aa19822d1baf9594`](https://github.com/hakiimm8/arayaweb/commit/f19cc41c7c599d42f6d2b165aa19822d1baf9594).
-- **Deployment:** [Pages run 37880869568](https://github.com/hakiimm8/arayaweb/actions/runs/37880869568), succeeded.
+- **Website-content commit:** [`541345c62dee0caf8a15f0d7c3ae8ede2b389291`](https://github.com/hakiimm8/arayaweb/commit/541345c62dee0caf8a15f0d7c3ae8ede2b389291).
+- **Deployment:** [Pages run 37896406947](https://github.com/hakiimm8/arayaweb/actions/runs/37896406947), succeeded.
 - **Production:** https://arayainternusa.co.id/araya/ remains unchanged.
 - **Design:** original Araya artwork and orange/charcoal/white Space Grotesk styling.
-- **Publication:** only `public/`; all five pages intentionally `noindex, nofollow`.
+- **Publication:** only `public/`; all six pages intentionally `noindex, nofollow`.
 
 | Page | Implemented scope |
 | --- | --- |
