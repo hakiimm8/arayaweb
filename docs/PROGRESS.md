@@ -5,8 +5,8 @@ Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing mo
 ## Current release
 
 - **Preview:** https://hakiimm8.github.io/arayaweb/
-- **Website-content commit:** [`b51bc47999c7267153313e83f675a3e31d602043`](https://github.com/hakiimm8/arayaweb/commit/b51bc47999c7267153313e83f675a3e31d602043).
-- **Deployment:** [Pages run 37867253415](https://github.com/hakiimm8/arayaweb/actions/runs/37867253415), succeeded.
+- **Website-content commit:** [`de91d39c7a1190b758179105f85349bc40ab5ced`](https://github.com/hakiimm8/arayaweb/commit/de91d39c7a1190b758179105f85349bc40ab5ced).
+- **Deployment:** [Pages run 37868242535](https://github.com/hakiimm8/arayaweb/actions/runs/37868242535), succeeded.
 - **Production:** https://arayainternusa.co.id/araya/ remains unchanged.
 - **Design:** original Araya artwork and orange/charcoal/white Space Grotesk styling.
 - **Publication:** only `public/`; all five pages intentionally `noindex, nofollow`.
@@ -37,6 +37,7 @@ The initial entries were recorded on 8 October 2026; subsequent navigation work 
 | `e866993` | Researched dedicated brand guides, product indexes, profiles, applications, enquiry briefs and accessible FAQs. | [37782440114](https://github.com/hakiimm8/arayaweb/actions/runs/37782440114), succeeded. |
 | `b34794b` | Consolidated documentation index, release history and current-state notes. | Documentation-only; public artifact unchanged. |
 | `030a205` | Separate Noris/ComAp header links and homepage buttons. Header arrangement superseded by the following owner request; separate homepage buttons retained. | [37866938106](https://github.com/hakiimm8/arayaweb/actions/runs/37866938106), succeeded; published navigation checks passed. |
+| `de91d39` | Eleven new manufacturer images; all 13 brand product sections illustrated, credited and lazy loaded. | [37868242535](https://github.com/hakiimm8/arayaweb/actions/runs/37868242535), succeeded; published desktop/mobile image checks passed. |
 | `b51bc47` | Brand Partners dropdown containing separate Noris/ComAp links; header/footer links generated from shared brand data. | [37867253415](https://github.com/hakiimm8/arayaweb/actions/runs/37867253415), succeeded; published dropdown checks passed. |
 
 The early navy design concepts and two generated logo attempts were not used in the current site. Preserve the restored original symbol and lettering.
@@ -82,3 +83,5 @@ After each change, update this record with request, sources, decision, affected 
 Owner requested more pictures on the Noris and ComAp pages. Added six Noris assets (marine temperature probes, pressure transmitter, noriMeter instrument, signal-processing devices, noriMos display and noriStar controls) and five ComAp assets (InteliDrive 700 Marine, InteliGen 1000 Marine, InteliLite 4 AMF 25, InteliSCADA and WebSupervisor). Each of the 13 product families now has a captioned, manufacturer-linked picture; the existing speed-sensor and InteliGen 500 G2 hero assets are reused in their product sections. New WebP assets total 285,534 bytes; below-hero images use lazy loading, async decoding, explicit dimensions and contain fit. Existing design, original logo, menu, contacts and preview noindex retained.
 
 Local static/build/JavaScript/whitespace checks passed. Headless Edge via bundled Playwright checked both brands at 1280×900 and 390×844: all 26 product figure checks loaded, intrinsic dimensions matched, alt text and linked credits present, contain fit and lazy loading applied, no overflow or page/console/HTTP errors. Brand Partners navigation and keyboard Escape focus return passed. Screenshot review confirmed readable desktop/mobile product layouts. Local evidence: `brand-pictures-local-*.png`, `brand-pictures-local.json`, `check-brand-pictures.cjs` and manufacturer contact sheet, retained outside the public repository. Published release verification is recorded in the current-release entry when deployed. No new Lighthouse measurement or performance-score improvement is claimed.
+
+Published verification: Pages run 37868242535 succeeded for de91d39. The same image checks passed on GitHub Pages at 1280x900 and 390x844: 26 loaded figures, correct dimensions/alt/source credits, no overflow or runtime/HTTP errors, and Brand Partners navigation/focus passed. Evidence: `brand-pictures-published-*.png` and `brand-pictures-published.json`, stored locally.
