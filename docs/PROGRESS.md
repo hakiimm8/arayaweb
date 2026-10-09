@@ -1,5 +1,9 @@
 # Progress and release record
 
+## NORINET research — 9 October 2026
+
+Read and rendered both pages of the owner's supplied brochure; explained the onboard gateway, cloud monitoring, vessel/fleet dashboards, reports and integration. Recorded the printed V01.02 / October 2019 revision, compared it with the current manufacturer noriNet page, and saved suggested website wording and limits in [NORINET research](NORINET-RESEARCH.md). Documentation only: current website artifact remains de91d39; no NORINET section has been published in this update.
+
 Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing monitoring or fresh production audit is implied.
 
 ## Current release

@@ -6,6 +6,7 @@ Updated 9 October 2026, Asia/Jakarta.
 - [Project notes](PROJECT-NOTES.md): production audit baseline, findings, design decisions and maintenance notes.
 - [Content sources](CONTENT-SOURCES.md): owner-provided scopes, manufacturer research, model examples and image credits.
 - [Brand maintenance](BRAND-MAINTENANCE.md): shared partner menu, brand-page data and steps for adding future partners.
+- [NORINET research](NORINET-RESEARCH.md): owner-supplied brochure explanation, current manufacturer cross-check and proposed website wording.
 
 The latest website-content release is `de91d39`. Documentation-only changes do not alter that release's HTML or assets. Production WordPress remains unchanged; the public preview intentionally uses `noindex, nofollow`.
 

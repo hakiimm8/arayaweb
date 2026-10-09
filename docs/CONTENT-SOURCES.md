@@ -1,5 +1,7 @@
 # Project scopes and brand details
 
+Additional owner-supplied NORINET brochure research was recorded on 9 October 2026 in [NORINET research](NORINET-RESEARCH.md). The two-page document's printed footer is V01.02, October 2019, despite the supplied V01.01 filename. Its screenshots and network diagram were reviewed and compared with the current official remote-access/telemetry page. This record does not add a NORINET website section or a new Araya capability claim.
+
 Checked 8 October 2026 (Asia/Jakarta).
 
 ## Araya project scopes
