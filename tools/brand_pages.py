@@ -2,6 +2,14 @@
 from html import escape
 
 
+def portfolio_image(product, brand):
+    """Optional local manufacturer image; never imply an Araya installation."""
+    if 'image' not in product:
+        return ''
+    picture = product['image']
+    return f'''<figure class="portfolio-picture"><img src="../assets/images/{escape(picture['file'], quote=True)}" alt="{escape(picture['alt'], quote=True)}" width="{picture['width']}" height="{picture['height']}" loading="lazy" decoding="async"><figcaption><a href="{escape(product['source'], quote=True)}">{escape(picture['caption'])} · Image: {escape(brand)}</a></figcaption></figure>'''
+
+
 def brand_content(key, data, arrow):
     name = escape(data['name'])
     sections = [('about-brand', 'About the brand'), ('portfolio', 'Products & systems'),
@@ -10,7 +18,7 @@ def brand_content(key, data, arrow):
     facts = ''.join(f'<div><dt>{escape(label)}</dt><dd>{escape(value)}</dd></div>' for label, value in data['facts'])
     finder = ''.join(f'<a href="#{product["id"]}"><span>{i:02}</span>{escape(product["short"])}{arrow}</a>' for i, product in enumerate(data['products'], 1))
     portfolio = ''.join(f'''<article class="portfolio-row" id="{product['id']}">
-      <div><span class="portfolio-number">{i:02}</span><h3>{escape(product['title'])}</h3><p class="family-name">{escape(product['family'])}</p></div>
+      <div><span class="portfolio-number">{i:02}</span><h3>{escape(product['title'])}</h3><p class="family-name">{escape(product['family'])}</p>{portfolio_image(product, data['name'])}</div>
       <div><p>{escape(product['body'])}</p><dl><div><dt>Applications</dt><dd>{escape(product['application'])}</dd></div><div><dt>Selection details</dt><dd>{escape(product['selection'])}</dd></div></dl><a class="text-link" href="{escape(product['source'], quote=True)}">Manufacturer details &amp; documents {arrow}</a></div>
     </article>''' for i, product in enumerate(data['products'], 1))
     applications = ''.join(f'''<article class="application-row"><span>{i:02}</span><h3>{escape(title)}</h3><div><p>{escape(body)}</p><a class="text-link" href="#{anchor}">{escape(label)} {arrow}</a></div></article>''' for i, (title, body, anchor, label) in enumerate(data['applications'], 1))

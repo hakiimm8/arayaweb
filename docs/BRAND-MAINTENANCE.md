@@ -22,3 +22,8 @@ The shared header uses a **Brand Partners** dropdown with separate Noris and Com
 - CSS and JavaScript URLs include content hashes so new markup gets matching changed assets.
 
 There is no practical brand-count limit in the data model, but retest the dropdown height and mobile navigation when adding more entries. Add only confirmed partners and real content; no placeholder partner is included in the current menu.
+
+
+## Product-section pictures
+
+Each product entry can include an optional `image` dictionary: `file`, actual `width` and `height`, descriptive `alt`, and a short `caption`. Place the real manufacturer WebP file in `public/assets/images/`; the shared renderer adds a lazy-loaded figure below the family heading and credits the brand with a link to that product’s `source`. It contains the complete image without cropping or stretching. Example software screens must be described as examples. Keep download URLs in `tools/fetch_brand_assets.py` and provenance in `CONTENT-SOURCES.md`. Omit the image dictionary when no suitable image is available. Rebuild and check both desktop and mobile after changing images.

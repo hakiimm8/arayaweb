@@ -1,6 +1,6 @@
 # Progress and release record
 
-Recorded 8 October 2026, Asia/Jakarta. Historical session evidence; no ongoing monitoring or fresh production audit is implied.
+Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing monitoring or fresh production audit is implied.
 
 ## Current release
 
@@ -16,8 +16,8 @@ Recorded 8 October 2026, Asia/Jakarta. Historical session evidence; no ongoing m
 | [Home](https://hakiimm8.github.io/arayaweb/) | Company, services, brand entry points, owner-supplied 1,500+ total and Indonesian regions, project-scope summaries, contacts. |
 | [Marine](https://hakiimm8.github.io/arayaweb/marine/) | Eight scope areas spanning electrical/mechanical work, monitoring, control, navigation/manoeuvring and retrofit. |
 | [Industrial](https://hakiimm8.github.io/arayaweb/industrial/) | Five scope areas: machinery, cranes, panels/motor controls, PLC/HMI/SCADA/instrumentation and generator control. |
-| [Noris](https://hakiimm8.github.io/arayaweb/noris/) | Seven product areas: speed, temperature, pressure, instruments, signal processing, noriMos and noriStar. Brand profile, real product image, applications, references, enquiry brief and FAQs. |
-| [ComAp](https://hakiimm8.github.io/arayaweb/comap/) | Six product areas: engine control, paralleling/load sharing, marine PMS, single-generator control, InteliSCADA and WebSupervisor. Brand profile, real product image, applications, references, enquiry brief and FAQs. |
+| [Noris](https://hakiimm8.github.io/arayaweb/noris/) | Seven product areas: speed, temperature, pressure, instruments, signal processing, noriMos and noriStar. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
+| [ComAp](https://hakiimm8.github.io/arayaweb/comap/) | Six product areas: engine control, paralleling/load sharing, marine PMS, single-generator control, InteliSCADA and WebSupervisor. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
 
 WhatsApp is owner-supplied +62 81326396262, linked as https://wa.me/6281326396262. No enquiry message was sent during checks.
 
@@ -75,3 +75,10 @@ Validate the changed desktop/mobile flow, then publish the preview by pushing th
 For a preview rollback, revert the unwanted site commit on `main`, push, and verify the resulting Pages deployment. Select a known accepted release; the recreated-logo commit is rejected. Production rollback is separate and requires its own verified files/database backup.
 
 After each change, update this record with request, sources, decision, affected routes/files, checks, defects/corrections, commit/run and pending work. Keep historical entries labelled when superseded.
+
+
+## Product pictures — 9 October 2026
+
+Owner requested more pictures on the Noris and ComAp pages. Added six Noris assets (marine temperature probes, pressure transmitter, noriMeter instrument, signal-processing devices, noriMos display and noriStar controls) and five ComAp assets (InteliDrive 700 Marine, InteliGen 1000 Marine, InteliLite 4 AMF 25, InteliSCADA and WebSupervisor). Each of the 13 product families now has a captioned, manufacturer-linked picture; the existing speed-sensor and InteliGen 500 G2 hero assets are reused in their product sections. New WebP assets total 285,534 bytes; below-hero images use lazy loading, async decoding, explicit dimensions and contain fit. Existing design, original logo, menu, contacts and preview noindex retained.
+
+Local static/build/JavaScript/whitespace checks passed. Headless Edge via bundled Playwright checked both brands at 1280×900 and 390×844: all 26 product figure checks loaded, intrinsic dimensions matched, alt text and linked credits present, contain fit and lazy loading applied, no overflow or page/console/HTTP errors. Brand Partners navigation and keyboard Escape focus return passed. Screenshot review confirmed readable desktop/mobile product layouts. Local evidence: `brand-pictures-local-*.png`, `brand-pictures-local.json`, `check-brand-pictures.cjs` and manufacturer contact sheet, retained outside the public repository. Published release verification is recorded in the current-release entry when deployed. No new Lighthouse measurement or performance-score improvement is claimed.

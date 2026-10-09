@@ -34,7 +34,7 @@ These are manufacturer portfolio examples, not confirmed Araya inventory or a pr
 
 ## Product image provenance
 
-Two unchanged manufacturer WebP assets are stored locally for consistent preview loading (approximately 44 KB combined). They are explicitly credited below the images, with links to their source product pages. They are product images, not photographs of an Araya installation. No generated product visuals or redrawn brand logos were used. Confirm permitted marketing use before a production rollout.
+Initial release: two unchanged manufacturer WebP assets were stored locally for consistent preview loading (approximately 44 KB combined). They are explicitly credited below the images, with links to their source product pages. They are product images, not photographs of an Araya installation. No generated product visuals or redrawn brand logos were used. Confirm permitted marketing use before a production rollout.
 
 - `public/assets/images/noris-speed-sensors.webp`: Noris Group GmbH speed-sensor portfolio image. Download URL: https://www.noris-group.com/fileadmin/_processed_/d/d/csm_FAxx_Kombination_bearb_035_08fc5f7a85.webp
 - `public/assets/images/comap-inteligen-500-g2.webp`: ComAp InteliGen 500 G2 image. Download URL: https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/parallel%20gen-set%20controllers/inteligen/web%20images/optimized%20web%20images/ineligen_500_g2_main.png?f=WebP&h=650&w=850
@@ -43,7 +43,7 @@ Optional refetch command: `python tools/fetch_brand_assets.py`. Normal HTML buil
 
 ## Expanded dedicated brand guides — 8 October 2026
 
-The owner asked for research and fuller, separate brand pages within Araya's website. The `/noris/` and `/comap/` routes now have distinct manufacturer profiles, indexed product families, application guidance, enquiry checklists, and three FAQs each. Product summaries are written in original language and cite the manufacturer's relevant page. Images remain the two credited, unchanged manufacturer assets above. Existing Araya styling and original logo are retained.
+The owner asked for research and fuller, separate brand pages within Araya's website. The `/noris/` and `/comap/` routes now have distinct manufacturer profiles, indexed product families, application guidance, enquiry checklists, and three FAQs each. Product summaries are written in original language and cite the manufacturer's relevant page. At that release, images were the two credited, unchanged manufacturer assets above. See the expanded image record below for the current portfolio. Existing Araya styling and original logo are retained.
 
 Additional primary sources checked:
 
@@ -59,3 +59,26 @@ Additional primary sources checked:
 - [WebSupervisor](https://www.comap-control.com/products/software-tools/monitoring-tools/online-monitoring-tools/websupervisor/): cloud-based device/fleet monitoring. Copy notes connectivity and subscription dependencies.
 
 Previously listed InteliDrive 700 Marine, InteliGen 500 G2, InteliGen 1000 Marine, noriMos, speed sensor and signal-processing pages were retained as individual product references. Features, approval requirements, legacy migration, controller mixing and substitutions require application review. Enquiry and replacement checklists are practical guidance, not manufacturer approval or a promise of stock, warranty, certification or engineering outcome. No new Araya partnership, exclusivity or named case-study claims were added. The preview remains noindex and does not establish a measured production SEO gain.
+
+
+## Expanded product pictures — 9 October 2026
+
+Added 11 manufacturer images: six Noris and five ComAp. All 13 product families now have a relevant picture beside their description, including reuse of the two existing hero assets. ComAp software images are example manufacturer screens, not an Araya installation or live customer data. Noris noriMos and noriStar images show manufacturer equipment, not a completed Araya project. The manufacturer-labelled AI engine-control-room banner was excluded.
+
+Files are unchanged WebP responses from official manufacturer asset servers; ComAp image-server dimensions are requested at 768px. No product artwork was generated or retouched. New assets total 285,534 bytes. Images are self-hosted, lazy loaded below the hero, given explicit intrinsic dimensions and descriptive alt text, and displayed with contain fit. Each caption links to its manufacturer source page. Marketing-use permission remains to be confirmed before production as previously recorded.
+
+| Local asset | Manufacturer source page | Exact image download |
+| --- | --- | --- |
+| `noris-speed-sensors.webp` | [Speed-sensor portfolio](https://www.noris-group.com/products-and-systems/sensors/speed-sensors/speed-sensor-portfolio) | [Official asset](https://www.noris-group.com/fileadmin/_processed_/d/d/csm_FAxx_Kombination_bearb_035_08fc5f7a85.webp) |
+| `noris-temperature-sensors.webp` | [Marine temperature sensors](https://www.noris-group.com/products-and-systems/sensors/temperature-sensors) | [Official asset](https://www.noris-group.com/fileadmin/_processed_/0/6/csm_Tempsens_schiffbau_img_bearb__002_8b3dc21fe0.webp) |
+| `noris-pressure-sensor.webp` | [Pressure transmitter](https://www.noris-group.com/products-and-systems/sensors/pressure-sensors) | [Official asset](https://www.noris-group.com/fileadmin/_processed_/c/7/csm_PAx9_bearb__005_43746a0fad.webp) |
+| `noris-norimeter.webp` | [noriMeter NIQ3 indicator](https://www.noris-group.com/products-and-systems/analogue-indicators) | [Official asset](https://www.noris-group.com/fileadmin/_processed_/5/3/csm_NIQ3-096-FD1-768-MED-blau_bearb_001_44e1a717ad.webp) |
+| `noris-signal-processing.webp` | [Signal-processing devices](https://www.noris-group.com/products-and-systems/signal-processing) | [Official asset](https://www.noris-group.com/fileadmin/_processed_/4/a/csm_Signalverarbeitung_kombi_img_bearb__006_fefe637b76.webp) |
+| `noris-norimos.webp` | [noriMos visualisation example](https://www.noris-group.com/products-and-systems/maritime-system-solutions/alarm-monitoring-and-control) | [Official asset](https://www.noris-group.com/fileadmin/_processed_/3/2/csm_Bildschirm-mit-NORIMOS4-Visualisierung_2_40d53d7005.webp) |
+| `noris-noristar.webp` | [noriStar propulsion controls](https://www.noris-group.com/products-and-systems/maritime-system-solutions/propulsion-control) | [Official asset](https://www.noris-group.com/fileadmin/_processed_/e/a/csm_NORISTAR-4-Panel_img_009_fe9987abc9.webp) |
+| `comap-intelidrive-700-marine.webp` | [InteliDrive 700 Marine](https://www.comap-control.com/products/controllers/engine-controllers/intelidrive-700-marine/intelidrive-700-marine/) | [Official asset](https://imgproc.comap-control.com/Local/mediacontainer/comap/media/products/intelidrive%20700%20marine/inelidrive_700_marine_main.png?f=WebP&w=768&h=768) |
+| `comap-inteligen-500-g2.webp` | [InteliGen 500 G2](https://www.comap-control.com/products/controllers/paralleling-gen-set-controllers/inteligen/inteligen-500-g2/) | [Official asset](https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/parallel%20gen-set%20controllers/inteligen/web%20images/optimized%20web%20images/ineligen_500_g2_main.png?f=WebP&h=650&w=850) |
+| `comap-inteligen-1000-marine.webp` | [InteliGen 1000 Marine](https://www.comap-control.com/products/controllers/generator-controllers/inteligen-1000-marine/) | [Official asset](https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/parallel%20gen-set%20controllers/inteligen/web%20images/ig1000%20marine/comap_inteligen_1000_marine-front.png?f=WebP&w=768&h=768) |
+| `comap-intelilite-4-amf-25.webp` | [InteliLite 4 AMF 25](https://www.comap-control.com/products/controllers/single-gen-set-controllers/intelilite/intelilite-4-amf-25/) | [Official asset](https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/single%20gen-set%20controllers/intelilite/web%20images/optimized%20intelilite/intelilite4_amf25_main.png?f=WebP&w=768&h=768) |
+| `comap-inteliscada.webp` | [InteliSCADA example screen](https://www.comap-control.com/products/software-tools/monitoring-tools/pc-monitoring-tools/inteliscada/) | [Official asset](https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/common%20products/sw%20tools/web%20images/inteliscada%20screen.png?f=WebP&w=768&h=768) |
+| `comap-websupervisor.webp` | [WebSupervisor example screens](https://www.comap-control.com/products/software-tools/monitoring-tools/online-monitoring-tools/websupervisor/) | [Official asset](https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/common%20products/sw%20tools/web%20images/websupervisor.png?f=WebP&w=768&h=768) |
