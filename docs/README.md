@@ -7,7 +7,7 @@ Updated 9 October 2026, Asia/Jakarta.
 - [Content sources](CONTENT-SOURCES.md): owner-provided scopes, manufacturer research, model examples and image credits.
 - [Brand maintenance](BRAND-MAINTENANCE.md): shared partner menu, brand-page data and steps for adding future partners.
 - [ComAp applications](COMAP-APPLICATIONS.md): application explanations, system diagrams, manufacturer references and regional scope.
-- [NORINET research](NORINET-RESEARCH.md): owner-supplied brochure explanation, current manufacturer cross-check and proposed website wording.
+- [NORINET research](NORINET-RESEARCH.md): owner-supplied brochure explanation, current manufacturer cross-check, implemented section and system-diagram provenance.
 
 The latest website-content release is `c37c534`. Documentation-only changes do not alter that release's HTML or assets. Production WordPress remains unchanged; the public preview intentionally uses `noindex, nofollow`.
 

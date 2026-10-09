@@ -26,9 +26,9 @@ This is a public design preview with noindex,nofollow metadata. The production W
 
 Existing Araya logo, engineering photographs, company history, and displayed business contacts come from the owner's supplied website files and live site. Email/phone destinations have been aligned with their displayed labels; deliverability has not been tested. No enquiry is automatically sent. Service and brand links stay within the preview, with separate links to manufacturer references and the current website.
 
-Marine and industrial pages describe project scopes provided by the owner and the existing service pages. They are capability descriptions, not invented named case studies. Product families, example models, and 13 manufacturer product images have source attribution in [Content sources](docs/CONTENT-SOURCES.md). Model availability and project suitability require discussion with Araya.
+Marine and industrial pages describe project scopes provided by the owner and the existing service pages. They are capability descriptions, not invented named case studies. Product families, example models, and 14 manufacturer product images have source attribution in [Content sources](docs/CONTENT-SOURCES.md). Model availability and project suitability require discussion with Araya.
 
-Dedicated Noris and ComAp guides include manufacturer background, a product-family index, application guidance, an Araya enquiry brief and accessible expandable FAQs. Noris covers seven product areas; ComAp covers six. These are Araya's local brand guides; manufacturer links lead to current product details and documents.
+Dedicated Noris and ComAp guides include manufacturer background, a product-family index, application guidance, an Araya enquiry brief and accessible expandable FAQs. Noris covers eight product areas; ComAp covers six. These are Araya's local brand guides; manufacturer links lead to current product details and documents.
 
 The owner states that Araya distributes Noris and ComAp in Indonesia. Authorization, exclusivity, specific product availability, warranties and certifications are not asserted.
 
@@ -42,3 +42,5 @@ Space Grotesk is distributed under the SIL Open Font License; see `public/assets
 WordPress files, database exports, private configuration, backups and logs are not part of this repository or deployment artifact.
 
 ComAp now leads with an expandable application guide and real manufacturer system diagrams before the product catalogue. See [application sources and scope](docs/COMAP-APPLICATIONS.md).
+
+Noris includes noriNet remote vessel monitoring, a manufacturer dashboard picture and a zoomable vessel-to-shore system diagram. See [NORINET research and implementation](docs/NORINET-RESEARCH.md).

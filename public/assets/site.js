@@ -37,6 +37,7 @@ if (diagramViewer && typeof diagramViewer.showModal === 'function') {
       imageHeight = Number(thumbnail.getAttribute('height'));
       diagramViewer.querySelector('#diagram-viewer-title').textContent = link.dataset.diagramCaption;
       diagramViewer.querySelector('.diagram-viewer-source').href = link.closest('figure').querySelector('figcaption a').href;
+      diagramViewer.querySelector('.diagram-viewer-source').textContent = `Manufacturer source · ${link.dataset.diagramBrand}`;
       zoom = 1;
       diagramViewer.showModal();
       document.body.classList.add('diagram-view-open');

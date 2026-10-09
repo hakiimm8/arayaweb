@@ -1,8 +1,8 @@
 # Progress and release record
 
-## NORINET research — 9 October 2026
+## Initial NORINET research — 9 October 2026 (historical)
 
-Read and rendered both pages of the owner's supplied brochure; explained the onboard gateway, cloud monitoring, vessel/fleet dashboards, reports and integration. Recorded the printed V01.02 / October 2019 revision, compared it with the current manufacturer noriNet page, and saved suggested website wording and limits in [NORINET research](NORINET-RESEARCH.md). Documentation only: current website artifact remains de91d39; no NORINET section has been published in this update.
+Read and rendered both pages of the owner's supplied brochure; explained the onboard gateway, cloud monitoring, vessel/fleet dashboards, reports and integration. Recorded the printed V01.02 / October 2019 revision, compared it with the current manufacturer noriNet page, and saved suggested website wording and limits in [NORINET research](NORINET-RESEARCH.md). That initial research commit was documentation only. It is superseded by the implemented NORINET section recorded below.
 
 Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing monitoring or fresh production audit is implied.
 
@@ -20,7 +20,7 @@ Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing mo
 | [Home](https://hakiimm8.github.io/arayaweb/) | Company, services, brand entry points, owner-supplied 1,500+ total and Indonesian regions, project-scope summaries, contacts. |
 | [Marine](https://hakiimm8.github.io/arayaweb/marine/) | Eight scope areas spanning electrical/mechanical work, monitoring, control, navigation/manoeuvring and retrofit. |
 | [Industrial](https://hakiimm8.github.io/arayaweb/industrial/) | Five scope areas: machinery, cranes, panels/motor controls, PLC/HMI/SCADA/instrumentation and generator control. |
-| [Noris](https://hakiimm8.github.io/arayaweb/noris/) | Seven product areas: speed, temperature, pressure, instruments, signal processing, noriMos and noriStar. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
+| [Noris](https://hakiimm8.github.io/arayaweb/noris/) | Eight product areas: speed, temperature, pressure, instruments, signal processing, noriMos and noriStar. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
 | [ComAp](https://hakiimm8.github.io/arayaweb/comap/) | 19 detailed applications across marine, power generation and smart energy, plus six product areas: engine control, paralleling/load sharing, marine PMS, single-generator control, InteliSCADA and WebSupervisor. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
 
 WhatsApp is owner-supplied +62 81326396262, linked as https://wa.me/6281326396262. No enquiry message was sent during checks.
@@ -113,3 +113,10 @@ Added a native dialog with Fit, 100–300% zoom, image scrolling, source/title d
 Local static/build/JavaScript/whitespace checks passed. Existing application checks passed at 1280/768/390/360px and product-picture/Brand Partners checks at 1280/390px. Diagram QA covers all thirteen images at 1280/390/360px: loading, title/source binding, fit dimensions, zoom limits and reset, scrolling, focus containment, Close/Escape/backdrop, scroll unlock and focus return. No JavaScript fallback opens the local image in a new tab. No page/console/HTTP errors or page overflow observed. Two pre-publication defects were reproduced and corrected: Fit initially constrained only width for tall diagrams (BESS image 651px vs 588px available), and browser Tab traversal temporarily moved to the document body at the modal boundary. Fit now includes height and explicit Tab wrapping retains focus. Local evidence prefix diagram-viewer-local-, updated application evidence comap-applications-diagrams-local.json, and diagram-regression.json; screenshots/source contact sheet retained outside the public repository. No Lighthouse or production SEO score is claimed.
 
 Published diagram release c37c5342309f7fafbf0371aeb5672d9088c43f24 deployed successfully in Pages run 37879114243. Repeat checks passed on GitHub Pages for all thirteen diagrams at 1280/390/360px: loading/source/title, fit within height and width, zoom limits/reset, scroll, focus containment/return, Close/Escape/backdrop and no-JavaScript original-image fallback. No page overflow or page/console/HTTP errors. Evidence prefix diagram-viewer-published-. Public local-document links passed.
+
+
+## NORINET implementation — 9 October 2026
+
+Added noriNet as Noris's eighth product area: manufacturer dashboard picture, full-width vessel-to-shore architecture diagram, collection/interface/cloud flow, MQTT telemetry and VPN service explanation, selection inputs, application anchor and noriMos comparison FAQ. The shared diagram viewer now attributes the selected brand correctly. Two unchanged manufacturer WebP assets total 91,210 bytes; no owner PDF is publicly redistributed.
+
+Local checks passed in headless Edge at 1280/390/360px: finder/anchor, both images and actual dimensions, Fit/zoom/scroll, keyboard focus containment and Escape return, Close, FAQ, owner WhatsApp, no-JavaScript image fallback, ComAp source-credit regression, and no runtime/HTTP errors or horizontal overflow. Static build/check and JavaScript syntax passed. Source and historical brochure-version details are in NORINET-RESEARCH.md. Deployment and published checks will be recorded in the current-release section after publishing.

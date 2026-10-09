@@ -1,6 +1,6 @@
 # NORINET brochure review
 
-Reviewed 9 October 2026, Asia/Jakarta. This is a content research note; no website section or production change is included in this documentation update.
+Reviewed 9 October 2026, Asia/Jakarta. The brochure research is now implemented in the Noris preview page at `/noris/#norinet`. Production remains unchanged.
 
 ## Sources and version
 
@@ -33,12 +33,24 @@ The current Noris page describes two functions: remote access for service/suppor
 
 MQTT is a messaging protocol; security depends on the configured connection and access controls. Remote service access is not evidence that an operator can remotely steer or start a vessel. Do not present this as a substitute for onboard alarm, protection or navigation systems, or claim automatic failure prediction or guaranteed fuel savings.
 
-## Relevance to Araya and proposed website wording
+## Relevance to Araya and initial wording proposal
 
-This would fit an additional **Remote monitoring & fleet performance** product area on the Noris page, linked from AMS/system retrofit work. The existing page currently covers seven other product families. No NORINET supply history, installed base, stock, exclusive relationship or implementation commitment has been established for Araya.
+The initial proposal below has now been implemented as the eighth Noris product area, **Remote monitoring & fleet performance**, with an application link and a noriMos/noriNet FAQ. The seven earlier product areas remain. No NORINET supply history, installed base, stock, exclusive relationship or implementation commitment has been established for Araya.
 
 Suggested concise copy, subject to the agreed product scope:
 
 > noriNet connects onboard monitoring and navigation data to a cloud-based view of your vessel or fleet. Explore remote diagnostics, operating trends, voyage reports and performance analysis with Araya. Integration depends on the available measurements, system interfaces and vessel connectivity.
 
 Enquiry inputs: existing AMS/controller models, signal and protocol lists, vessel count, internet arrangements, required dashboards/reports, access roles and the intended service scope. Quantitative fuel/efficiency analysis also requires suitable measurement data and a defined calculation method; screenshots alone do not establish accuracy or savings.
+
+
+## Implemented preview — 9 October 2026
+
+- Stable deep link: `/noris/#norinet`, available in the product finder and vessel-from-shore application row.
+- Manufacturer dashboard picture (768×540), and full-width system diagram (1440×960) with three-step vessel-to-shore explanation and explicit MQTT/VPN roles.
+- Diagram supports Fit, zoom to 300%, scrolling, Close/Escape and focus return. Its credit and source identify Noris; ComAp retains its own credits. A normal image link remains available without JavaScript.
+- Metadata and marine connection mention noriNet. Enquiry points cover existing systems, interfaces, vessels, connectivity, reports and access roles.
+- Both WebP assets are unchanged manufacturer responses, totalling 91,210 bytes. No redraw, AI artwork or PDF redistribution. Exact download URLs are in CONTENT-SOURCES.md and tools/fetch_brand_assets.py.
+- Current manufacturer artwork is used instead of extracting the older brochure's diagram. NORICAN/Modbus/NMEA labels are described as interface examples; actual compatibility is project-specific.
+
+The supplied brochure remains the explanation source for historical architecture details. The page does not claim unrestricted remote vessel operation, automatic failure prediction, guaranteed efficiency savings or an Araya NORINET installed base.

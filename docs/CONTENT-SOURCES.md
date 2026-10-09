@@ -92,3 +92,15 @@ Owner supplied screenshots of the manufacturer application menu and requested de
 
 
 Additional application diagrams: ten official ComAp WebP files and their exact source/download URLs are recorded in the expanded-diagrams section of COMAP-APPLICATIONS.md. All thirteen diagrams support an enlarged browser viewer. Added assets total 398,948 bytes; no manufacturer artwork was generated or edited. The owner’s screenshot matches the existing marine AC PMS illustration.
+
+
+## noriNet remote monitoring and system diagram — 9 October 2026
+
+Source: [Noris remote access and telemetry](https://www.noris-group.com/products-and-systems/maritime-system-solutions/remote-access-and-telemetry), cross-checked against the owner-supplied brochure; version distinctions and implementation scope are in [NORINET research](NORINET-RESEARCH.md).
+
+| Local file | Official manufacturer asset | Actual dimensions / bytes |
+| --- | --- | --- |
+| `noris-norinet-display.webp` | [Dashboard display](https://www.noris-group.com/fileadmin/_processed_/f/d/csm_Ship-Performance-Management-NORINET-Display1_6ed56c98c8.webp) | 768×540 / 24,662 |
+| `noris-norinet-system.webp` | [System overview](https://www.noris-group.com/fileadmin/_processed_/b/3/csm_NORINET_System-Overview_253166fe55.webp) | 1440×960 / 66,548 |
+
+Unchanged manufacturer images, credited and locally hosted with lazy loading, intrinsic dimensions and alt text. These show manufacturer examples, not Araya installations. The original owner PDF remains outside the public repository. Attribution records provenance; it does not establish marketing permission for the production launch.

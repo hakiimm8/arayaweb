@@ -10,6 +10,9 @@ from urllib.request import Request, urlopen
 
 DEST = Path(__file__).resolve().parents[1] / 'public/assets/images'
 ASSETS = {
+    'noris-norinet-display.webp': 'https://www.noris-group.com/fileadmin/_processed_/f/d/csm_Ship-Performance-Management-NORINET-Display1_6ed56c98c8.webp',
+    'noris-norinet-system.webp': 'https://www.noris-group.com/fileadmin/_processed_/b/3/csm_NORINET_System-Overview_253166fe55.webp',
+
     'comap-diagram-marine-dc.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/marine/marine_ac_dc_pms_hybrid.png?f=WebP&w=900&h=900',
     'comap-diagram-shore-connection.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/marine/comap_shore_marine_scheme_web.png?f=WebP&w=900&h=900',
     'comap-diagram-auxiliary-engine.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/marine/comap_marine_scheme_auxiliary.png?f=WebP&w=900&h=900',
