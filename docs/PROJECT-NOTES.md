@@ -4,7 +4,9 @@ Recorded 8 October 2026, Asia/Jakarta. Historical observations from the project 
 
 ## Current state and records
 
-Latest website release `de91d39` deployed successfully in [Pages run 37868242535](https://github.com/hakiimm8/arayaweb/actions/runs/37868242535). Every Noris/ComAp product section now has a real manufacturer picture; 11 new WebP assets total 285,534 bytes. Local and published desktop/mobile image checks passed. Exact sources and usage boundaries are in CONTENT-SOURCES.md.
+Latest website release `52d954e` deployed successfully in [Pages run 37878202684](https://github.com/hakiimm8/arayaweb/actions/runs/37878202684). ComAp now leads with 19 detailed applications across Marine, Power generation and Smart energy management, three manufacturer system diagrams and application-first navigation. Local and published checks passed at 1280/768/390/360px, including keyboard/native expansion, hashes, diagram views and enquiry/product links. See COMAP-APPLICATIONS.md for source and scope details.
+
+Earlier product-picture release `de91d39` deployed successfully in [Pages run 37868242535](https://github.com/hakiimm8/arayaweb/actions/runs/37868242535). Every Noris/ComAp product section now has a real manufacturer picture; 11 new WebP assets total 285,534 bytes. Local and published desktop/mobile image checks passed. Exact sources and usage boundaries are in CONTENT-SOURCES.md.
 
 Earlier navigation release `b51bc47` deployed successfully in [Pages run 37867253415](https://github.com/hakiimm8/arayaweb/actions/runs/37867253415). The owner selected a **Brand Partners** dropdown with separate Noris and ComAp entries. Header/footer brand links and generated brand routes use shared BRANDS data; homepage brand buttons remain separate. Local/published checks across all five routes at 1280px, 1024px and 390px passed, including keyboard/Escape focus, outside-click closing, mobile navigation, direct hero links and no-JavaScript navigation. No overflow/page/console/HTTP errors. Future-partner instructions: [Brand maintenance](BRAND-MAINTENANCE.md). The preceding brand-guide release described below remains historical; content is retained.
 

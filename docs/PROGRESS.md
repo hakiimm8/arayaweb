@@ -9,8 +9,8 @@ Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing mo
 ## Current release
 
 - **Preview:** https://hakiimm8.github.io/arayaweb/
-- **Website-content commit:** [`de91d39c7a1190b758179105f85349bc40ab5ced`](https://github.com/hakiimm8/arayaweb/commit/de91d39c7a1190b758179105f85349bc40ab5ced).
-- **Deployment:** [Pages run 37868242535](https://github.com/hakiimm8/arayaweb/actions/runs/37868242535), succeeded.
+- **Website-content commit:** [`52d954e04a60c6442b7e9408594a41779640c30d`](https://github.com/hakiimm8/arayaweb/commit/52d954e04a60c6442b7e9408594a41779640c30d).
+- **Deployment:** [Pages run 37878202684](https://github.com/hakiimm8/arayaweb/actions/runs/37878202684), succeeded.
 - **Production:** https://arayainternusa.co.id/araya/ remains unchanged.
 - **Design:** original Araya artwork and orange/charcoal/white Space Grotesk styling.
 - **Publication:** only `public/`; all five pages intentionally `noindex, nofollow`.
@@ -21,7 +21,7 @@ Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing mo
 | [Marine](https://hakiimm8.github.io/arayaweb/marine/) | Eight scope areas spanning electrical/mechanical work, monitoring, control, navigation/manoeuvring and retrofit. |
 | [Industrial](https://hakiimm8.github.io/arayaweb/industrial/) | Five scope areas: machinery, cranes, panels/motor controls, PLC/HMI/SCADA/instrumentation and generator control. |
 | [Noris](https://hakiimm8.github.io/arayaweb/noris/) | Seven product areas: speed, temperature, pressure, instruments, signal processing, noriMos and noriStar. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
-| [ComAp](https://hakiimm8.github.io/arayaweb/comap/) | Six product areas: engine control, paralleling/load sharing, marine PMS, single-generator control, InteliSCADA and WebSupervisor. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
+| [ComAp](https://hakiimm8.github.io/arayaweb/comap/) | 19 detailed applications across marine, power generation and smart energy, plus six product areas: engine control, paralleling/load sharing, marine PMS, single-generator control, InteliSCADA and WebSupervisor. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
 
 WhatsApp is owner-supplied +62 81326396262, linked as https://wa.me/6281326396262. No enquiry message was sent during checks.
 
@@ -41,6 +41,7 @@ The initial entries were recorded on 8 October 2026; subsequent navigation work 
 | `e866993` | Researched dedicated brand guides, product indexes, profiles, applications, enquiry briefs and accessible FAQs. | [37782440114](https://github.com/hakiimm8/arayaweb/actions/runs/37782440114), succeeded. |
 | `b34794b` | Consolidated documentation index, release history and current-state notes. | Documentation-only; public artifact unchanged. |
 | `030a205` | Separate Noris/ComAp header links and homepage buttons. Header arrangement superseded by the following owner request; separate homepage buttons retained. | [37866938106](https://github.com/hakiimm8/arayaweb/actions/runs/37866938106), succeeded; published navigation checks passed. |
+| `52d954e` | Detailed ComAp application guide: 19 explanations, three system diagrams, application-first navigation and expandable sections. | [37878202684](https://github.com/hakiimm8/arayaweb/actions/runs/37878202684), succeeded; published application checks passed. |
 | `de91d39` | Eleven new manufacturer images; all 13 brand product sections illustrated, credited and lazy loaded. | [37868242535](https://github.com/hakiimm8/arayaweb/actions/runs/37868242535), succeeded; published desktop/mobile image checks passed. |
 | `b51bc47` | Brand Partners dropdown containing separate Noris/ComAp links; header/footer links generated from shared brand data. | [37867253415](https://github.com/hakiimm8/arayaweb/actions/runs/37867253415), succeeded; published dropdown checks passed. |
 
@@ -98,3 +99,5 @@ Owner requested application detail following screenshots of the ComAp Applicatio
 Sources and scope distinctions are in COMAP-APPLICATIONS.md. Spot Price Dispatch is explicitly identified as currently available in Australia and Singapore, not offered as an Indonesian tariff service. Specialist applications are manufacturer portfolio examples, not additional Araya project-history, certification or inventory claims.
 
 Local build/static audit, JavaScript syntax and whitespace passed. Browser checks in headless Edge via bundled Playwright passed at 1280x900, 768x900, 390x844 and 360x844: all 76 application instances opened/closed by keyboard, four explanation fields each, group navigation, direct hashes, related application opening, product CTA, owner WhatsApp destination, three loaded diagrams with correct dimensions, larger-image tabs and no horizontal overflow or page/console/HTTP errors. Native application expansion also passed with JavaScript disabled. Existing Noris/ComAp product-image and Brand Partners navigation/focus checks passed at 1280/390px. Visually inspected desktop/mobile hero, marine overview, PMS and BESS explanations. Local evidence prefix: comap-applications-local-; source JSON and scripts/screenshots retained outside this repository. No Lighthouse or production ranking remeasurement was performed.
+
+Published application release: 52d954e04a60c6442b7e9408594a41779640c30d deployed successfully in Pages run 37878202684. Repeat application QA passed on GitHub Pages at 1280/768/390/360px: all 19 entries per width, keyboard expansion, group/deep/related/product links, diagram dimensions and full-size views, WhatsApp, no overflow/runtime/HTTP errors and native expansion without JavaScript. Evidence prefix comap-applications-published-. Static public-doc links also passed.
