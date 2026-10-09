@@ -54,3 +54,5 @@ Enquiry inputs: existing AMS/controller models, signal and protocol lists, vesse
 - Current manufacturer artwork is used instead of extracting the older brochure's diagram. NORICAN/Modbus/NMEA labels are described as interface examples; actual compatibility is project-specific.
 
 The supplied brochure remains the explanation source for historical architecture details. The page does not claim unrestricted remote vessel operation, automatic failure prediction, guaranteed efficiency savings or an Araya NORINET installed base.
+
+Published website-content commit `f19cc41c7c599d42f6d2b165aa19822d1baf9594`, successful Pages run [37880869568](https://github.com/hakiimm8/arayaweb/actions/runs/37880869568). Local and published checks passed at 1280/390/360px, including diagram viewing, focus/keyboard, native image fallback, source credits and contact links. No overflow or runtime/HTTP errors observed.

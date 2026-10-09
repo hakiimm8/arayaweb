@@ -9,8 +9,8 @@ Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing mo
 ## Current release
 
 - **Preview:** https://hakiimm8.github.io/arayaweb/
-- **Website-content commit:** [`c37c5342309f7fafbf0371aeb5672d9088c43f24`](https://github.com/hakiimm8/arayaweb/commit/c37c5342309f7fafbf0371aeb5672d9088c43f24).
-- **Deployment:** [Pages run 37879114243](https://github.com/hakiimm8/arayaweb/actions/runs/37879114243), succeeded.
+- **Website-content commit:** [`f19cc41c7c599d42f6d2b165aa19822d1baf9594`](https://github.com/hakiimm8/arayaweb/commit/f19cc41c7c599d42f6d2b165aa19822d1baf9594).
+- **Deployment:** [Pages run 37880869568](https://github.com/hakiimm8/arayaweb/actions/runs/37880869568), succeeded.
 - **Production:** https://arayainternusa.co.id/araya/ remains unchanged.
 - **Design:** original Araya artwork and orange/charcoal/white Space Grotesk styling.
 - **Publication:** only `public/`; all five pages intentionally `noindex, nofollow`.
@@ -20,7 +20,7 @@ Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing mo
 | [Home](https://hakiimm8.github.io/arayaweb/) | Company, services, brand entry points, owner-supplied 1,500+ total and Indonesian regions, project-scope summaries, contacts. |
 | [Marine](https://hakiimm8.github.io/arayaweb/marine/) | Eight scope areas spanning electrical/mechanical work, monitoring, control, navigation/manoeuvring and retrofit. |
 | [Industrial](https://hakiimm8.github.io/arayaweb/industrial/) | Five scope areas: machinery, cranes, panels/motor controls, PLC/HMI/SCADA/instrumentation and generator control. |
-| [Noris](https://hakiimm8.github.io/arayaweb/noris/) | Eight product areas: speed, temperature, pressure, instruments, signal processing, noriMos and noriStar. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
+| [Noris](https://hakiimm8.github.io/arayaweb/noris/) | Eight product areas: speed, temperature, pressure, instruments, signal processing, noriMos, noriStar and noriNet. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
 | [ComAp](https://hakiimm8.github.io/arayaweb/comap/) | 19 detailed applications across marine, power generation and smart energy, plus six product areas: engine control, paralleling/load sharing, marine PMS, single-generator control, InteliSCADA and WebSupervisor. Brand profile, product pictures in every family, applications, references, enquiry brief and FAQs. |
 
 WhatsApp is owner-supplied +62 81326396262, linked as https://wa.me/6281326396262. No enquiry message was sent during checks.
@@ -41,6 +41,7 @@ The initial entries were recorded on 8 October 2026; subsequent navigation work 
 | `e866993` | Researched dedicated brand guides, product indexes, profiles, applications, enquiry briefs and accessible FAQs. | [37782440114](https://github.com/hakiimm8/arayaweb/actions/runs/37782440114), succeeded. |
 | `b34794b` | Consolidated documentation index, release history and current-state notes. | Documentation-only; public artifact unchanged. |
 | `030a205` | Separate Noris/ComAp header links and homepage buttons. Header arrangement superseded by the following owner request; separate homepage buttons retained. | [37866938106](https://github.com/hakiimm8/arayaweb/actions/runs/37866938106), succeeded; published navigation checks passed. |
+| `f19cc41` | noriNet remote vessel/fleet monitoring, official dashboard and zoomable architecture diagram, flow explanation, selection inputs and FAQ. | [37880869568](https://github.com/hakiimm8/arayaweb/actions/runs/37880869568), succeeded; published checks passed at 1280/390/360px. |
 | `c37c534` | Ten additional application diagrams (13 total) and accessible fit/zoom viewer, with native original-image fallback. | [37879114243](https://github.com/hakiimm8/arayaweb/actions/runs/37879114243), succeeded; published diagram/viewer checks passed. |
 | `52d954e` | Detailed ComAp application guide: 19 explanations, three system diagrams, application-first navigation and expandable sections. | [37878202684](https://github.com/hakiimm8/arayaweb/actions/runs/37878202684), succeeded; published application checks passed. |
 | `de91d39` | Eleven new manufacturer images; all 13 brand product sections illustrated, credited and lazy loaded. | [37868242535](https://github.com/hakiimm8/arayaweb/actions/runs/37868242535), succeeded; published desktop/mobile image checks passed. |
@@ -119,4 +120,4 @@ Published diagram release c37c5342309f7fafbf0371aeb5672d9088c43f24 deployed succ
 
 Added noriNet as Noris's eighth product area: manufacturer dashboard picture, full-width vessel-to-shore architecture diagram, collection/interface/cloud flow, MQTT telemetry and VPN service explanation, selection inputs, application anchor and noriMos comparison FAQ. The shared diagram viewer now attributes the selected brand correctly. Two unchanged manufacturer WebP assets total 91,210 bytes; no owner PDF is publicly redistributed.
 
-Local checks passed in headless Edge at 1280/390/360px: finder/anchor, both images and actual dimensions, Fit/zoom/scroll, keyboard focus containment and Escape return, Close, FAQ, owner WhatsApp, no-JavaScript image fallback, ComAp source-credit regression, and no runtime/HTTP errors or horizontal overflow. Static build/check and JavaScript syntax passed. Source and historical brochure-version details are in NORINET-RESEARCH.md. Deployment and published checks will be recorded in the current-release section after publishing.
+Local checks passed in headless Edge at 1280/390/360px: finder/anchor, both images and actual dimensions, Fit/zoom/scroll, keyboard focus containment and Escape return, Close, FAQ, owner WhatsApp, no-JavaScript image fallback, ComAp source-credit regression, and no runtime/HTTP errors or horizontal overflow. Static build/check and JavaScript syntax passed. Source and historical brochure-version details are in NORINET-RESEARCH.md. Website-content commit f19cc41c7c599d42f6d2b165aa19822d1baf9594 deployed successfully in Pages run 37880869568. The same NORINET checks passed on the published site at 1280/390/360px, including both brand credits and the no-JavaScript fallback. Evidence prefix: norinet-published-.
