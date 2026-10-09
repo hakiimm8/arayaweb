@@ -51,7 +51,7 @@ def shell(title, description, content, route=""):
     <a class="brand" href="{home}" aria-label="PT Araya Internusa home"><img src="{prefix}assets/images/araya-logo-original.png" alt="PT Araya Internusa" width="291" height="52"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation"><span>Menu</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
-      {nav('Home', '')}{nav('About Us', '#about')}{nav('Our Services', '#services')}{nav('Noris & ComAp', '#brands')}{nav('Our Projects', '#projects')}
+      {nav('Home', '')}{nav('About Us', '#about')}{nav('Our Services', '#services')}<a href="{prefix}noris/">Noris</a><a href="{prefix}comap/">ComAp</a>{nav('Our Projects', '#projects')}
       <a class="nav-contact" href="{home}#contact">Contact Us {ARROW}</a>
     </nav>
   </div>
@@ -113,7 +113,7 @@ HOME = f'''
 <section class="hero" aria-labelledby="hero-heading">
   <img class="hero-photo" src="./assets/images/ship.webp" alt="Passenger vessel alongside a quay, from Araya’s marine project photographs" width="1400" height="840" fetchpriority="high">
   <div class="hero-shade"></div>
-  <div class="container hero-content"><p class="eyebrow">PT ARAYA INTERNUSA</p><h1 id="hero-heading">Engineering &amp;<br>automation solutions<br><span>in Indonesia.</span></h1><p class="hero-description">Marine. Industrial. Automation.<br>Noris and ComAp solutions, with a local team to discuss your requirements.</p><div class="hero-actions"><a class="button" href="#brands">Explore Noris &amp; ComAp {ARROW}</a><a class="button button-outline" href="#contact">Contact our team {ARROW}</a></div></div>
+  <div class="container hero-content"><p class="eyebrow">PT ARAYA INTERNUSA</p><h1 id="hero-heading">Engineering &amp;<br>automation solutions<br><span>in Indonesia.</span></h1><p class="hero-description">Marine. Industrial. Automation.<br>Noris and ComAp solutions, with a local team to discuss your requirements.</p><div class="hero-actions"><a class="button" href="./noris/">Explore Noris {ARROW}</a><a class="button button-outline" href="./comap/">Explore ComAp {ARROW}</a><a class="button button-outline" href="#contact">Contact our team {ARROW}</a></div></div>
   <div class="hero-index" aria-hidden="true"><span>01</span> / MARINE &amp; AUTOMATION</div>
 </section>
 <section class="feature-strip" aria-label="Our approach"><div class="container feature-grid">
@@ -134,7 +134,7 @@ HOME = f'''
   </div>
 </div></section>
 <section class="section" id="brands"><div class="container">
-  <div class="section-heading"><div><p class="eyebrow">NORIS &amp; COMAP IN INDONESIA</p><h2>Specialist solutions.<br>A local point of contact.</h2></div><p>PT Araya Internusa distributes Noris and ComAp solutions in Indonesia. Talk to us about your equipment and application.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">OUR BRAND PORTFOLIOS</p><h2>Specialist solutions.<br>A local point of contact.</h2></div><p>PT Araya Internusa distributes Noris and ComAp solutions in Indonesia. Talk to us about your equipment and application.</p></div>
   <div class="brand-grid">
     <article class="brand-panel"><div class="brand-name">NORIS<span>NORIS GROUP GmbH</span></div><h3>Instruments &amp; sensors.<br>Marine automation.</h3><p>Speed, temperature, and pressure measurement. Indicators and signal processing. Explore Noris instrumentation, sensors, and marine monitoring solutions with Araya.</p><a class="text-link" href="./noris/">Explore Noris in Indonesia {ARROW}</a></article>
     <article class="brand-panel"><div class="brand-name">ComAp<span>ENGINE &amp; POWER CONTROL</span></div><h3>Engine control.<br>Power management.<br>Load sharing.</h3><p>Engine monitoring and protection, coordination of generating sources, and load sharing between parallel generators. Discuss your ComAp application with Araya.</p><a class="text-link" href="./comap/">Explore ComAp in Indonesia {ARROW}</a></article>
