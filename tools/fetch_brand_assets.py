@@ -10,6 +10,16 @@ from urllib.request import Request, urlopen
 
 DEST = Path(__file__).resolve().parents[1] / 'public/assets/images'
 ASSETS = {
+    'comap-diagram-marine-dc.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/marine/marine_ac_dc_pms_hybrid.png?f=WebP&w=900&h=900',
+    'comap-diagram-shore-connection.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/marine/comap_shore_marine_scheme_web.png?f=WebP&w=900&h=900',
+    'comap-diagram-auxiliary-engine.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/marine/comap_marine_scheme_auxiliary.png?f=WebP&w=900&h=900',
+    'comap-diagram-mechanical-propulsion.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/applications/marine/propulsion%20control/asset-3mechanical_propulsion_700.png?f=WebP&w=900&h=900',
+    'comap-diagram-electric-propulsion.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/applications/marine/propulsion%20control/propulsion_scheme_marine_im1010_thrusters_iv52.png?f=WebP&w=900&h=900',
+    'comap-diagram-prime-power.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/schemes/wsv_scheme_telecom.png?f=WebP&w=900&h=900',
+    'comap-diagram-off-grid-hybrid.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/applications/power%20generation/hybrid/asset-4off_grid_village.png?f=WebP&w=900&h=900',
+    'comap-diagram-chp.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/widgets/application%20example/chp-interactive_scheme_gas_web.png?f=WebP&w=900&h=900',
+    'comap-diagram-fuel-cells.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/applications/power%20generation/fuel%20cells/fuel_cell_multiple_grid_connected_scheme.png?f=WebP&w=900&h=900',
+    'comap-diagram-bess.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/applications/smart%20energy%20management/bess/bess-on-grid-scheme.png?f=WebP&w=900&h=900',
     'comap-application-marine-pms.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/marine/comap_ac_pms_marine_scheme_web.png?f=WebP&w=900&h=900',
     'comap-application-standby.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/applications/power%20generation/standby/comap-standby-power-example.png?f=WebP&w=900&h=900',
     'comap-application-hybrid.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/widgets/application%20example/asset-3microgrid_on_grid.png?f=WebP&w=900&h=900',

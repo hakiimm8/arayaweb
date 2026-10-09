@@ -32,3 +32,8 @@ Each product entry can include an optional `image` dictionary: `file`, actual `w
 ## Detailed application guides
 
 ComAp uses optional `application_groups` from `tools/comap_applications.py`. Each group contains a stable anchor, title, introduction, conceptual flow, credited diagram and application entries. Entries have purpose, typical system, control functions, example families, selection inputs, related anchors and manufacturer source. The shared `application_guide` renderer in `brand_pages.py` places this before products when the field exists. The first item in each group is open; other items use native details/summary. JavaScript opens an entry referenced by a hash or related link. Retest keyboard, direct hashes, related links, mobile widths and the no-JavaScript path after changes. Validate region-specific availability against current manufacturer sources.
+
+
+### Diagrams and enlarged view
+
+Application entries can have a `diagrams` list; current assignments are in APPLICATION_DIAGRAMS in tools/comap_applications.py. Each picture supplies file, actual width/height, alt and caption; its credit uses the application source. Group diagrams additionally have their own source. The shared diagram_figure helper gives both kinds the same original-image fallback link and viewer trigger. A native dialog is rendered only on a page with a detailed guide. JavaScript supplies fit/zoom, scrolling, source/title updates, close handling and focus return. Retest all pictures, modified-click/no-JavaScript fallback, zoom limits, image scrolling, background scroll lock, close/Escape/backdrop and focus return on desktop and mobile after changing the viewer.

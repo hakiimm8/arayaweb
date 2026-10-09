@@ -109,3 +109,8 @@ Both dedicated brand guides now show a relevant manufacturer image for every pro
 ## Application-led ComAp guide — 9 October 2026
 
 The owner requested detailed application explanations beyond generic module pictures. The ComAp page now places 19 explanations in Marine, Power generation and Smart energy management groups before its six product-family sections. Each details the system, control functions, example families and selection inputs. Three manufacturer diagrams illustrate PMS, standby and hybrid systems. Application menus work by keyboard, direct links and without JavaScript; sources and regional limits are recorded in COMAP-APPLICATIONS.md.
+
+
+## Expanded manufacturer diagrams — 9 October 2026
+
+ComAp now has thirteen explanatory diagrams, with ten additional application-specific drawings and a fit/zoom viewer. Figures stay linked to the original local image for JavaScript-free use, and manufacturer credits remain visible. Native dialog focus, source/title updates, zoom/scroll, closing and mobile fit are verified; exact assets and implementation notes are in COMAP-APPLICATIONS.md.

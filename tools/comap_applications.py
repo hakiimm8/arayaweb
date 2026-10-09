@@ -5,6 +5,28 @@ application examples, not a record of Araya installations or stocked equipment.
 """
 BASE = 'https://www.comap-control.com/application-areas/'
 
+
+def diagram(file, height, caption, alt):
+    return {'file': file, 'width': 900, 'height': height, 'caption': caption, 'alt': alt}
+
+
+APPLICATION_DIAGRAMS = {
+    'marine-ac-dc-pms': [
+        diagram('comap-diagram-marine-dc.webp', 494, 'Marine DC / hybrid power example', 'ComAp example marine power arrangement connecting generator sources, conversion equipment, propulsion loads and shore supply'),
+        diagram('comap-diagram-shore-connection.webp', 506, 'Shore connection example', 'ComAp marine shore-connection diagram highlighting the shore supply, controller and vessel bus'),
+    ],
+    'marine-engine-supervision': [diagram('comap-diagram-auxiliary-engine.webp', 506, 'Auxiliary engine control example', 'ComAp marine auxiliary-engine supervision example showing engine controllers and onboard system connections')],
+    'marine-propulsion': [
+        diagram('comap-diagram-mechanical-propulsion.webp', 311, 'Mechanical propulsion example', 'ComAp mechanical propulsion control diagram connecting bridge displays and engine controllers to two propulsion engines'),
+        diagram('comap-diagram-electric-propulsion.webp', 329, 'Electric propulsion example', 'ComAp electric propulsion example with operator displays, controllers, variable-frequency drives and propulsion motors'),
+    ],
+    'prime-power': [diagram('comap-diagram-prime-power.webp', 682, 'Prime power with remote monitoring', 'ComAp prime-power example showing generating sets, controllers and communications to a remote site')],
+    'hybrid-generation': [diagram('comap-diagram-off-grid-hybrid.webp', 496, 'Off-grid hybrid generation example', 'ComAp isolated hybrid microgrid diagram combining renewable generation, battery storage and generator sets to supply a village')],
+    'chp-power': [diagram('comap-diagram-chp.webp', 636, 'Gas generation & CHP control example', 'ComAp CHP application diagram showing a gas-engine generator, controller, auxiliary process equipment and grid connection')],
+    'fuel-cell-generation': [diagram('comap-diagram-fuel-cells.webp', 431, 'Multiple fuel cells with grid connection', 'ComAp fuel-cell application diagram with multiple controlled fuel-cell sources, grid supply and site load')],
+    'battery-storage-control': [diagram('comap-diagram-bess.webp', 651, 'Grid-connected battery storage example', 'ComAp BESS diagram connecting battery racks, battery management, power conversion, auxiliaries and the site electrical system')],
+}
+
 COMAP_APPLICATIONS = [
     {
         'id': 'marine-applications', 'title': 'Marine',
@@ -189,3 +211,7 @@ COMAP_APPLICATIONS = [
         ],
     },
 ]
+
+for group in COMAP_APPLICATIONS:
+    for application in group['items']:
+        application['diagrams'] = APPLICATION_DIAGRAMS.get(application['id'], [])

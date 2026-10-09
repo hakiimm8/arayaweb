@@ -89,3 +89,6 @@ Files are unchanged WebP responses from official manufacturer asset servers; Com
 ## ComAp application explanations — 9 October 2026
 
 Owner supplied screenshots of the manufacturer application menu and requested detailed application descriptions. All 19 entries and three diagram sources, model distinctions, regional availability limits and provenance are recorded in [ComAp application research](COMAP-APPLICATIONS.md). This guide precedes the existing product catalogue and includes marine, power-generation and smart-energy groups. Manufacturer applications are not represented as an Araya installation history.
+
+
+Additional application diagrams: ten official ComAp WebP files and their exact source/download URLs are recorded in the expanded-diagrams section of COMAP-APPLICATIONS.md. All thirteen diagrams support an enlarged browser viewer. Added assets total 398,948 bytes; no manufacturer artwork was generated or edited. The owner’s screenshot matches the existing marine AC PMS illustration.

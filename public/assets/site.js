@@ -11,6 +11,70 @@ document.querySelector('.application-guide')?.addEventListener('click', (event) 
   const link = event.target.closest('a[href^="#"]');
   if (link) revealApplication(link.getAttribute('href'));
 });
+const diagramViewer = document.querySelector('.diagram-viewer');
+if (diagramViewer && typeof diagramViewer.showModal === 'function') {
+  const image = diagramViewer.querySelector('.diagram-stage img');
+  const stage = diagramViewer.querySelector('.diagram-stage');
+  const zoomOut = diagramViewer.querySelector('[data-zoom="out"]');
+  const zoomIn = diagramViewer.querySelector('[data-zoom="in"]');
+  let trigger, zoom = 1, imageWidth = 900, imageHeight = 506;
+  const resizeDiagram = () => {
+    const fitWidth = Math.min(imageWidth, Math.max(1, stage.clientWidth - 32), Math.max(1, stage.clientHeight - 32) * imageWidth / imageHeight);
+    image.style.width = `${fitWidth * zoom}px`;
+    diagramViewer.querySelector('.diagram-zoom-status').textContent = `${Math.round(zoom * 100)}%`;
+    zoomOut.disabled = zoom <= 1;
+    zoomIn.disabled = zoom >= 3;
+  };
+  document.querySelectorAll('.diagram-trigger').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      trigger = link;
+      const thumbnail = link.querySelector('img');
+      image.src = link.href;
+      image.alt = thumbnail.alt;
+      imageWidth = Number(thumbnail.getAttribute('width'));
+      imageHeight = Number(thumbnail.getAttribute('height'));
+      diagramViewer.querySelector('#diagram-viewer-title').textContent = link.dataset.diagramCaption;
+      diagramViewer.querySelector('.diagram-viewer-source').href = link.closest('figure').querySelector('figcaption a').href;
+      zoom = 1;
+      diagramViewer.showModal();
+      document.body.classList.add('diagram-view-open');
+      resizeDiagram();
+      stage.scrollTop = stage.scrollLeft = 0;
+    });
+  });
+  diagramViewer.querySelector('.diagram-close').addEventListener('click', () => diagramViewer.close());
+  diagramViewer.addEventListener('keydown', event => {
+    if (event.key !== 'Tab') return;
+    const controls = [...diagramViewer.querySelectorAll('button:not(:disabled), a[href], [tabindex="0"]')];
+    const first = controls[0], last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+  diagramViewer.querySelectorAll('[data-zoom]').forEach(button => {
+    button.addEventListener('click', () => {
+      zoom = button.dataset.zoom === 'reset' ? 1 : Math.max(1, Math.min(3, zoom + (button.dataset.zoom === 'in' ? .5 : -.5)));
+      resizeDiagram();
+      if (zoom === 1) stage.scrollTop = stage.scrollLeft = 0;
+    });
+  });
+  diagramViewer.addEventListener('click', event => {
+    if (event.target !== diagramViewer) return;
+    const box = diagramViewer.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) diagramViewer.close();
+  });
+  diagramViewer.addEventListener('close', () => {
+    document.body.classList.remove('diagram-view-open');
+    trigger?.focus({preventScroll:true});
+  });
+  window.addEventListener('resize', () => { if (diagramViewer.open) resizeDiagram(); });
+}
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-navigation');
 const brandMenu = document.querySelector('.brand-menu');
