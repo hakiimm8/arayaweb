@@ -110,3 +110,13 @@ if (menuButton && navigation) {
   });
   window.matchMedia('(min-width: 981px)').addEventListener('change', () => setMenu(false));
 }
+// The client logo strip scrolls continuously; this button lets visitors pause it (WCAG 2.2.2).
+const marqueeToggle = document.querySelector('.marquee-toggle');
+const marquee = document.querySelector('.client-marquee');
+if (marqueeToggle && marquee) {
+  marqueeToggle.addEventListener('click', () => {
+    const paused = marquee.classList.toggle('is-paused');
+    marqueeToggle.setAttribute('aria-pressed', String(paused));
+    marqueeToggle.textContent = paused ? 'Play logos' : 'Pause logos';
+  });
+}

@@ -5,12 +5,13 @@ and owner-supplied project scopes. See docs/CONTENT-SOURCES.md.
 """
 
 CLIENTS = [
-    {'name': 'PT PELNI (Persero)', 'logo': 'client-pelni.webp', 'width': 234, 'height': 90},
-    {'name': 'Pelindo Jasa Maritim', 'logo': 'client-pelindo.webp', 'width': 294, 'height': 62},
-    {'name': 'Pertamina', 'logo': 'client-pertamina.webp', 'width': 414, 'height': 96},
-    {'name': 'TNI Angkatan Laut (Indonesian Navy)', 'logo': 'client-tni-al.webp', 'width': 85, 'height': 96},
+    {'name': 'PT PELNI (Persero)', 'logo': 'client-pelni.webp', 'width': 526, 'height': 160},
+    {'name': 'Pertamina', 'logo': 'client-pertamina.svg', 'width': 1097, 'height': 255},
+    {'name': 'Pelindo', 'logo': 'client-pelindo.webp', 'width': 774, 'height': 160},
+    {'name': 'TNI Angkatan Laut (Indonesian Navy)', 'logo': 'client-tni-al.webp', 'width': 141, 'height': 160, 'emblem': True},
+    {'name': 'PT Samudera Indonesia Tbk', 'logo': 'client-samudera-indonesia.webp', 'width': 1040, 'height': 160},
+    {'name': 'PT USDA Seroja Jaya shipyard', 'logo': 'client-usda-seroja-jaya.webp', 'width': 588, 'height': 144},
     {'name': 'PT Armada Cakrawala Esa', 'logo': 'client-armada-cakrawala-esa.webp', 'width': 179, 'height': 53},
-    {'name': 'PT USDA Seroja Jaya shipyard', 'logo': 'client-usda-seroja-jaya.webp', 'width': 392, 'height': 96},
 ]
 
 STEPS = [

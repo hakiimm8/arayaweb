@@ -16,6 +16,7 @@ Owner direction: keep the existing design, change content only; English only; sh
 - **SEO:** titles ≤60 characters; ProfessionalService/LocalBusiness schema with address and hours; BreadcrumbList, Service and FAQPage schema; 1200×630 JPEG share image; Twitter card; `sitemap.xml`. Preview remains `noindex, nofollow`.
 - **Performance (no visual change):** the `js` class is now set inline, removing the mobile layout shift. Correctly proportioned logo file, responsive hero/card images and correct image dimensions.
 - **Checks:** `python tools/check.py` passed (6 pages). Local screenshots at 1440px and 390px showed no overflow and no console errors. Local Lighthouse mobile: home 100/95/100/66, ComAp 99/96/100/66, CLS 0 (was 0.262). SEO 66 reflects intentional noindex.
+- **Client logo strip (follow-up):** seven client logos from higher-quality sources scroll continuously, pause on hover, and have a Pause/Play button (WCAG 2.2.2). A static, wrapped row is shown when the visitor prefers reduced motion. All 14 logo images (two copies for seamless looping) load at 1440px and 390px; logos are not lazy-loaded because sideways-clipped images would not load. See CONTENT-SOURCES.md for sources.
 - **Still open from the audit (design decisions deferred):** 9–11px text, orange-on-grey contrast and the "2009" badge contrast.
 
 ## Current release

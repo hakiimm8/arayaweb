@@ -109,7 +109,8 @@ def srcset(variants, prefix="./"):
 def home():
     cards = ''.join(f'''<a class="service-card" href="./{key}/"><img src="./assets/images/{s['card_image']}"{f' srcset="{srcset(s["card_variants"])}" sizes="(max-width: 680px) 100vw, 33vw"' if s.get('card_variants') else ''} alt="{escape(s['card_alt'], quote=True)}" width="{s['card_width']}" height="{s['card_height']}" loading="lazy"><div class="service-body"><span class="service-number">0{i}</span><h3>{escape(s['name'])}</h3><p>{escape(s['summary'])}</p><span class="card-link">Explore {escape(s['short'])} services {ARROW}</span></div></a>''' for i, (key, s) in enumerate(SERVICES.items(), 1))
     capabilities = ''.join(f'<a href="./{page}/#{anchor}">{escape(label)}{ARROW}</a>' for label, page, anchor in CAPABILITIES)
-    clients = ''.join(f'<li><img src="./assets/images/{c["logo"]}" alt="{escape(c["name"], quote=True)}" width="{c["width"]}" height="{c["height"]}" loading="lazy"></li>' for c in CLIENTS)
+    # Not lazy-loaded: logos clipped sideways inside the scrolling strip would never load.
+    clients = ''.join(f'<li><img{' class="is-emblem"' if c.get("emblem") else ''} src="./assets/images/{c["logo"]}" alt="{escape(c["name"], quote=True)}" width="{c["width"]}" height="{c["height"]}" fetchpriority="low" decoding="async"></li>' for c in CLIENTS)
     names = ', '.join(c['name'] for c in CLIENTS[:-1]) + ' and ' + CLIENTS[-1]['name']
     groups = ''.join(f'<div><h3>{escape(title)}</h3><p>{escape(" · ".join(brands))}</p></div>' for title, brands in BRAND_GROUPS)
     return f'''
@@ -136,8 +137,8 @@ def home():
 <section class="section projects" id="clients"><div class="container">
   <div class="section-heading"><div><p class="eyebrow">OUR CLIENTS</p><h2>Trusted by Indonesia’s<br>maritime &amp; energy sectors.</h2></div><p>Passenger and cargo fleets, port services, energy facilities, shipyards and naval vessels rely on our engineers.</p></div>
   <div class="project-reach"><div class="project-total"><strong>1,500+</strong><span>projects across Indonesia</span></div><div class="project-coverage"><h3>Across the archipelago</h3><ul><li>Sumatra</li><li>Jawa</li><li>Kalimantan</li><li>Sulawesi</li><li>Papua</li></ul></div></div>
-  <ul class="client-logos" aria-label="Selected clients">{clients}</ul>
-  <p class="client-note">Selected clients: {escape(names)}.</p>
+  <div class="client-marquee"><ul class="client-track" aria-label="Selected clients">{clients}</ul><ul class="client-track" aria-hidden="true">{clients}</ul></div>
+  <div class="client-footer"><p class="client-note">Selected clients: {escape(names)}.</p><button class="marquee-toggle" type="button" aria-pressed="false">Pause logos</button></div>
 </div></section>
 <section class="section" id="brands"><div class="container">
   <div class="section-heading"><div><p class="eyebrow">BRAND PARTNERS &amp; EQUIPMENT</p><h2>Specialist partners.<br>Multi-brand expertise.</h2></div><p>PT Araya Internusa distributes Noris and ComAp in Indonesia, and works on equipment from many other manufacturers.</p></div>

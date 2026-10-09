@@ -109,7 +109,19 @@ Unchanged manufacturer images, credited and locally hosted with lazy loading, in
 
 The owner asked the site to show what Araya does and who it works for, rather than per-project case studies, and to make clear that Araya is not limited to its brand partners. All content below comes from the owner's live website (read 9 October 2026). It supersedes the earlier note that no client names, equipment brands or guarantees were added. Confirm it with the owner before production.
 
-- **Client logos** ([homepage](https://arayainternusa.co.id/araya/) "Partners Who Trust Araya Internusa"): PT PELNI, Pelindo Jasa Maritim, Pertamina, TNI Angkatan Laut, PT Armada Cakrawala Esa and PT USDA Seroja Jaya. `tools/prepare_site_assets.py` downloads the six uploads, removes the white background and trims them without redrawing. It also crops the PELNI file's "new logo and tagline" caption.
+- **Client logos:** seven clients chosen by the owner, shown in an animated strip.
+
+  | Client | Source | Format |
+  | --- | --- | --- |
+  | PT PELNI (Persero) | Wikimedia Commons, [PELNI 2023.svg](https://commons.wikimedia.org/wiki/File:PELNI_2023.svg) (2023 identity), 1280px render | WebP |
+  | Pertamina | Wikimedia Commons, [Pertamina Logo.svg](https://commons.wikimedia.org/wiki/File:Pertamina_Logo.svg) (public domain) | SVG, unchanged |
+  | Pelindo | Wikimedia Commons, [Logo Baru Pelindo (2021).png](https://commons.wikimedia.org/wiki/File:Logo_Baru_Pelindo_(2021).png) (public domain) | WebP |
+  | TNI Angkatan Laut | Wikimedia Commons, [Insignia of the Indonesian Navy.svg](https://commons.wikimedia.org/wiki/File:Insignia_of_the_Indonesian_Navy.svg), 330px render | WebP |
+  | PT Samudera Indonesia Tbk | Indonesian Wikipedia, [Logo Samudera Indonesia PT.png](https://id.wikipedia.org/wiki/Berkas:Logo_Samudera_Indonesia_PT.png) (11048px source) | WebP |
+  | PT USDA Seroja Jaya | Owner's live-site upload `usda2.png` (no official site found) | WebP |
+  | PT Armada Cakrawala Esa | Owner's live-site upload `PT-armada-cakrawala-esa.png`, only 180×53 (no official site found) | WebP |
+
+  `tools/prepare_site_assets.py` trims each logo, resizes it to 160px high and removes white backgrounds from the two live-site uploads. Logos are not redrawn or recoloured. They are trademarks of their owners, shown to identify clients. Obtain official vector files for USDA Seroja Jaya and Armada Cakrawala Esa from those clients, and confirm permission to display all seven logos before production. The old PELNI flag logo and the earlier live-site PELNI, Pelindo, Pertamina and TNI uploads are no longer used.
 - **Equipment brands** (live [marine](https://arayainternusa.co.id/araya/services/marine/), [industrial](https://arayainternusa.co.id/araya/services/industrial/) and [automation](https://arayainternusa.co.id/araya/services/automation/) pages): listed as equipment Araya works on, with a trademark note that they do not imply partnerships. Only Noris and ComAp are presented as distribution partners.
 - **New scopes:** marine safety devices, AC/refrigeration and hydrodynamic test facilities; industrial wire-cut/EDM, NC cutting and casting machines; and a new Automation & Electrical page (protection relays, hazardous-area apparatus, UPS, surge protection, electronic card repair). All come from the same live service pages.
 - **6-month work guarantee and HIT technical backup:** live homepage "Guarantee" and "Experts" blocks.
