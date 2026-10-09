@@ -102,3 +102,8 @@ Owner requested further manufacturer research and complete individual brand page
 ## Manufacturer product pictures — 9 October 2026
 
 Both dedicated brand guides now show a relevant manufacturer image for every product family: seven Noris sections and six ComAp sections. Eleven additional WebP assets accompany the two existing hero images. Pictures have descriptive alt text, model/example captions, source-page credits, explicit dimensions and lazy loading. Real equipment and manufacturer example software screens are used; they do not represent Araya inventory or completed projects. See CONTENT-SOURCES.md for exact asset URLs and PROGRESS.md for checks.
+
+
+## Application-led ComAp guide — 9 October 2026
+
+The owner requested detailed application explanations beyond generic module pictures. The ComAp page now places 19 explanations in Marine, Power generation and Smart energy management groups before its six product-family sections. Each details the system, control functions, example families and selection inputs. Three manufacturer diagrams illustrate PMS, standby and hybrid systems. Application menus work by keyboard, direct links and without JavaScript; sources and regional limits are recorded in COMAP-APPLICATIONS.md.

@@ -27,3 +27,8 @@ There is no practical brand-count limit in the data model, but retest the dropdo
 ## Product-section pictures
 
 Each product entry can include an optional `image` dictionary: `file`, actual `width` and `height`, descriptive `alt`, and a short `caption`. Place the real manufacturer WebP file in `public/assets/images/`; the shared renderer adds a lazy-loaded figure below the family heading and credits the brand with a link to that product’s `source`. It contains the complete image without cropping or stretching. Example software screens must be described as examples. Keep download URLs in `tools/fetch_brand_assets.py` and provenance in `CONTENT-SOURCES.md`. Omit the image dictionary when no suitable image is available. Rebuild and check both desktop and mobile after changing images.
+
+
+## Detailed application guides
+
+ComAp uses optional `application_groups` from `tools/comap_applications.py`. Each group contains a stable anchor, title, introduction, conceptual flow, credited diagram and application entries. Entries have purpose, typical system, control functions, example families, selection inputs, related anchors and manufacturer source. The shared `application_guide` renderer in `brand_pages.py` places this before products when the field exists. The first item in each group is open; other items use native details/summary. JavaScript opens an entry referenced by a hash or related link. Retest keyboard, direct hashes, related links, mobile widths and the no-JavaScript path after changes. Validate region-specific availability against current manufacturer sources.

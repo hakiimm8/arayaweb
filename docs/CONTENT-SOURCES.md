@@ -84,3 +84,8 @@ Files are unchanged WebP responses from official manufacturer asset servers; Com
 | `comap-intelilite-4-amf-25.webp` | [InteliLite 4 AMF 25](https://www.comap-control.com/products/controllers/single-gen-set-controllers/intelilite/intelilite-4-amf-25/) | [Official asset](https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/single%20gen-set%20controllers/intelilite/web%20images/optimized%20intelilite/intelilite4_amf25_main.png?f=WebP&w=768&h=768) |
 | `comap-inteliscada.webp` | [InteliSCADA example screen](https://www.comap-control.com/products/software-tools/monitoring-tools/pc-monitoring-tools/inteliscada/) | [Official asset](https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/common%20products/sw%20tools/web%20images/inteliscada%20screen.png?f=WebP&w=768&h=768) |
 | `comap-websupervisor.webp` | [WebSupervisor example screens](https://www.comap-control.com/products/software-tools/monitoring-tools/online-monitoring-tools/websupervisor/) | [Official asset](https://imgproc.comap-control.com/Local/shp-media-files/comap/media/shpmediafiles/common%20products/sw%20tools/web%20images/websupervisor.png?f=WebP&w=768&h=768) |
+
+
+## ComAp application explanations — 9 October 2026
+
+Owner supplied screenshots of the manufacturer application menu and requested detailed application descriptions. All 19 entries and three diagram sources, model distinctions, regional availability limits and provenance are recorded in [ComAp application research](COMAP-APPLICATIONS.md). This guide precedes the existing product catalogue and includes marine, power-generation and smart-energy groups. Manufacturer applications are not represented as an Araya installation history.

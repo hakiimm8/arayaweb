@@ -1,4 +1,16 @@
 document.documentElement.classList.add('js');
+// Application links reveal the referenced explanation, including deep links.
+const revealApplication = (hash) => {
+  if (!hash || hash === '#') return;
+  const target = document.getElementById(hash.slice(1));
+  if (target && target.matches('details.application-detail')) target.open = true;
+};
+revealApplication(window.location.hash);
+window.addEventListener('hashchange', () => revealApplication(window.location.hash));
+document.querySelector('.application-guide')?.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href^="#"]');
+  if (link) revealApplication(link.getAttribute('href'));
+});
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-navigation');
 const brandMenu = document.querySelector('.brand-menu');

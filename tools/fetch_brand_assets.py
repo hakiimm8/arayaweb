@@ -10,6 +10,9 @@ from urllib.request import Request, urlopen
 
 DEST = Path(__file__).resolve().parents[1] / 'public/assets/images'
 ASSETS = {
+    'comap-application-marine-pms.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/marine/comap_ac_pms_marine_scheme_web.png?f=WebP&w=900&h=900',
+    'comap-application-standby.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/applications/power%20generation/standby/comap-standby-power-example.png?f=WebP&w=900&h=900',
+    'comap-application-hybrid.webp': 'https://imgproc.comap-control.com/Local/mediacontainer/comap/media/widgets/application%20example/asset-3microgrid_on_grid.png?f=WebP&w=900&h=900',
     'noris-temperature-sensors.webp': 'https://www.noris-group.com/fileadmin/_processed_/0/6/csm_Tempsens_schiffbau_img_bearb__002_8b3dc21fe0.webp',
     'noris-pressure-sensor.webp': 'https://www.noris-group.com/fileadmin/_processed_/c/7/csm_PAx9_bearb__005_43746a0fad.webp',
     'noris-norimeter.webp': 'https://www.noris-group.com/fileadmin/_processed_/5/3/csm_NIQ3-096-FD1-768-MED-blau_bearb_001_44e1a717ad.webp',

@@ -1,4 +1,5 @@
 """Research-backed brand-page copy. Provenance: docs/CONTENT-SOURCES.md."""
+from comap_applications import COMAP_APPLICATIONS
 
 NORIS = 'https://www.noris-group.com'
 COMAP = 'https://www.comap-control.com'
@@ -82,11 +83,12 @@ BRANDS = {
         'other': 'comap', 'other_label': 'Explore ComAp engine & power control',
     },
     'comap': {
+        'application_groups': COMAP_APPLICATIONS,
         'name': 'ComAp', 'label': 'COMAP CONTROL · INDONESIA',
         'title': 'ComAp Engine Control, Power Management & Load Sharing Indonesia | Araya Internusa',
-        'description': 'ComAp distributor in Indonesia: engine control, generator synchronisation, auto start/stop, power management and load sharing. Explore InteliDrive and InteliGen with Araya.',
+        'description': 'Explore ComAp applications in Indonesia with Araya: marine engine and power control, standby and parallel generators, hybrid energy, battery storage, SCADA and fleet monitoring.',
         'heading': 'ComAp engine &<br>power control.',
-        'intro': 'Control the engine. Synchronise the generators. Manage the load. Explore ComAp solutions for marine and industrial power systems.',
+        'intro': 'Start with your application. From marine propulsion and generator load sharing to standby power and hybrid energy, see how ComAp controls fit the complete system.',
         'image': 'comap-inteligen-500-g2.webp', 'image_width': 850, 'image_height': 592,
         'alt': 'ComAp InteliGen 500 G2 generator paralleling controller, manufacturer product image',
         'image_caption': 'InteliGen 500 G2 · Product image: ComAp',

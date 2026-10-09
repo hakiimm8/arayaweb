@@ -13,6 +13,7 @@ Start with the [documentation index](docs/README.md), [progress/release record](
 - `public/`: the complete published site, with home, marine, industrial, Noris and ComAp pages.
 - `tools/build.py`: shared HTML template and page copy. Run `python tools/build.py` after editing.
 - `tools/brand_profiles.py` and `tools/brand_pages.py`: researched brand content and dedicated brand-page layout.
+- `tools/comap_applications.py`: 19 sourced application explanations grouped by marine, power generation and smart energy management.
 - `.github/workflows/pages.yml`: publishes `public/` on push to main or manual dispatch. No PR triggers.
 
 To preview locally, serve `public/` with a static HTTP server. WordPress and PHP are not required for this preview.
@@ -39,3 +40,5 @@ Manufacturer application sources checked 2026-10-08:
 Space Grotesk is distributed under the SIL Open Font License; see `public/assets/fonts/OFL.txt` and https://github.com/google/fonts/tree/main/ofl/spacegrotesk.
 
 WordPress files, database exports, private configuration, backups and logs are not part of this repository or deployment artifact.
+
+ComAp now leads with an expandable application guide and real manufacturer system diagrams before the product catalogue. See [application sources and scope](docs/COMAP-APPLICATIONS.md).
