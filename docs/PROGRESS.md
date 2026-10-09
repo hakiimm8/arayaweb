@@ -9,8 +9,8 @@ Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing mo
 ## Current release
 
 - **Preview:** https://hakiimm8.github.io/arayaweb/
-- **Website-content commit:** [`52d954e04a60c6442b7e9408594a41779640c30d`](https://github.com/hakiimm8/arayaweb/commit/52d954e04a60c6442b7e9408594a41779640c30d).
-- **Deployment:** [Pages run 37878202684](https://github.com/hakiimm8/arayaweb/actions/runs/37878202684), succeeded.
+- **Website-content commit:** [`c37c5342309f7fafbf0371aeb5672d9088c43f24`](https://github.com/hakiimm8/arayaweb/commit/c37c5342309f7fafbf0371aeb5672d9088c43f24).
+- **Deployment:** [Pages run 37879114243](https://github.com/hakiimm8/arayaweb/actions/runs/37879114243), succeeded.
 - **Production:** https://arayainternusa.co.id/araya/ remains unchanged.
 - **Design:** original Araya artwork and orange/charcoal/white Space Grotesk styling.
 - **Publication:** only `public/`; all five pages intentionally `noindex, nofollow`.
@@ -41,6 +41,7 @@ The initial entries were recorded on 8 October 2026; subsequent navigation work 
 | `e866993` | Researched dedicated brand guides, product indexes, profiles, applications, enquiry briefs and accessible FAQs. | [37782440114](https://github.com/hakiimm8/arayaweb/actions/runs/37782440114), succeeded. |
 | `b34794b` | Consolidated documentation index, release history and current-state notes. | Documentation-only; public artifact unchanged. |
 | `030a205` | Separate Noris/ComAp header links and homepage buttons. Header arrangement superseded by the following owner request; separate homepage buttons retained. | [37866938106](https://github.com/hakiimm8/arayaweb/actions/runs/37866938106), succeeded; published navigation checks passed. |
+| `c37c534` | Ten additional application diagrams (13 total) and accessible fit/zoom viewer, with native original-image fallback. | [37879114243](https://github.com/hakiimm8/arayaweb/actions/runs/37879114243), succeeded; published diagram/viewer checks passed. |
 | `52d954e` | Detailed ComAp application guide: 19 explanations, three system diagrams, application-first navigation and expandable sections. | [37878202684](https://github.com/hakiimm8/arayaweb/actions/runs/37878202684), succeeded; published application checks passed. |
 | `de91d39` | Eleven new manufacturer images; all 13 brand product sections illustrated, credited and lazy loaded. | [37868242535](https://github.com/hakiimm8/arayaweb/actions/runs/37868242535), succeeded; published desktop/mobile image checks passed. |
 | `b51bc47` | Brand Partners dropdown containing separate Noris/ComAp links; header/footer links generated from shared brand data. | [37867253415](https://github.com/hakiimm8/arayaweb/actions/runs/37867253415), succeeded; published dropdown checks passed. |
@@ -110,3 +111,5 @@ Owner requested the manufacturer diagrams, supplying the marine AC PMS screensho
 Added a native dialog with Fit, 100–300% zoom, image scrolling, source/title display, Close/Escape/backdrop handling, background scroll lock and keyboard focus return. Image links remain usable without JavaScript. Application explanations and original Araya styling/photography/logo are retained. Sources and viewer maintenance are documented in COMAP-APPLICATIONS.md and BRAND-MAINTENANCE.md.
 
 Local static/build/JavaScript/whitespace checks passed. Existing application checks passed at 1280/768/390/360px and product-picture/Brand Partners checks at 1280/390px. Diagram QA covers all thirteen images at 1280/390/360px: loading, title/source binding, fit dimensions, zoom limits and reset, scrolling, focus containment, Close/Escape/backdrop, scroll unlock and focus return. No JavaScript fallback opens the local image in a new tab. No page/console/HTTP errors or page overflow observed. Two pre-publication defects were reproduced and corrected: Fit initially constrained only width for tall diagrams (BESS image 651px vs 588px available), and browser Tab traversal temporarily moved to the document body at the modal boundary. Fit now includes height and explicit Tab wrapping retains focus. Local evidence prefix diagram-viewer-local-, updated application evidence comap-applications-diagrams-local.json, and diagram-regression.json; screenshots/source contact sheet retained outside the public repository. No Lighthouse or production SEO score is claimed.
+
+Published diagram release c37c5342309f7fafbf0371aeb5672d9088c43f24 deployed successfully in Pages run 37879114243. Repeat checks passed on GitHub Pages for all thirteen diagrams at 1280/390/360px: loading/source/title, fit within height and width, zoom limits/reset, scroll, focus containment/return, Close/Escape/backdrop and no-JavaScript original-image fallback. No page overflow or page/console/HTTP errors. Evidence prefix diagram-viewer-published-. Public local-document links passed.

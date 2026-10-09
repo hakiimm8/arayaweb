@@ -4,7 +4,9 @@ Recorded 8 October 2026, Asia/Jakarta. Historical observations from the project 
 
 ## Current state and records
 
-Latest website release `52d954e` deployed successfully in [Pages run 37878202684](https://github.com/hakiimm8/arayaweb/actions/runs/37878202684). ComAp now leads with 19 detailed applications across Marine, Power generation and Smart energy management, three manufacturer system diagrams and application-first navigation. Local and published checks passed at 1280/768/390/360px, including keyboard/native expansion, hashes, diagram views and enquiry/product links. See COMAP-APPLICATIONS.md for source and scope details.
+Latest website release `c37c534` deployed successfully in [Pages run 37879114243](https://github.com/hakiimm8/arayaweb/actions/runs/37879114243). ComAp has thirteen manufacturer application diagrams with fit/zoom viewing, scrolling, linked credits, native fallback and keyboard close/focus handling. Local and published checks passed for all thirteen at 1280/390/360px. Source provenance and viewer maintenance are recorded in COMAP-APPLICATIONS.md and BRAND-MAINTENANCE.md.
+
+Earlier application-guide release `52d954e` deployed successfully in [Pages run 37878202684](https://github.com/hakiimm8/arayaweb/actions/runs/37878202684). ComAp now leads with 19 detailed applications across Marine, Power generation and Smart energy management, three manufacturer system diagrams and application-first navigation. Local and published checks passed at 1280/768/390/360px, including keyboard/native expansion, hashes, diagram views and enquiry/product links. See COMAP-APPLICATIONS.md for source and scope details.
 
 Earlier product-picture release `de91d39` deployed successfully in [Pages run 37868242535](https://github.com/hakiimm8/arayaweb/actions/runs/37868242535). Every Noris/ComAp product section now has a real manufacturer picture; 11 new WebP assets total 285,534 bytes. Local and published desktop/mobile image checks passed. Exact sources and usage boundaries are in CONTENT-SOURCES.md.
 
