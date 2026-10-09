@@ -4,7 +4,9 @@ Recorded 8 October 2026, Asia/Jakarta. Historical observations from the project 
 
 ## Current state and records
 
-The preview now contains five routes: home, marine, industrial, Noris and ComAp. Latest website-content commit `e866993` deployed successfully in [Pages run 37782440114](https://github.com/hakiimm8/arayaweb/actions/runs/37782440114). Brand guides include product indexes, profiles, applications, enquiry briefs and FAQs; published desktop/mobile checks passed. Original logo restored; recreated SVG is superseded. Production remains unchanged.
+Latest navigation release `b51bc47` deployed successfully in [Pages run 37867253415](https://github.com/hakiimm8/arayaweb/actions/runs/37867253415). The owner selected a **Brand Partners** dropdown with separate Noris and ComAp entries. Header/footer brand links and generated brand routes use shared BRANDS data; homepage brand buttons remain separate. Local/published checks across all five routes at 1280px, 1024px and 390px passed, including keyboard/Escape focus, outside-click closing, mobile navigation, direct hero links and no-JavaScript navigation. No overflow/page/console/HTTP errors. Future-partner instructions: [Brand maintenance](BRAND-MAINTENANCE.md). The preceding brand-guide release described below remains historical; content is retained.
+
+The preview contains five routes: home, marine, industrial, Noris and ComAp. Brand-guide content commit `e866993` deployed successfully in [Pages run 37782440114](https://github.com/hakiimm8/arayaweb/actions/runs/37782440114). Brand guides include product indexes, profiles, applications, enquiry briefs and FAQs; published desktop/mobile checks passed. Original logo restored; recreated SVG is superseded. Production remains unchanged.
 
 See [documentation index](README.md), [progress and releases](PROGRESS.md) and [content sources](CONTENT-SOURCES.md). Earlier three-page notes below are historical. Owner WhatsApp is now shared across all five pages.
 

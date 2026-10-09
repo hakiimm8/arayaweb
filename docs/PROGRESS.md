@@ -5,8 +5,8 @@ Recorded 8 October 2026, Asia/Jakarta. Historical session evidence; no ongoing m
 ## Current release
 
 - **Preview:** https://hakiimm8.github.io/arayaweb/
-- **Website-content commit:** [`e8669932878a97df7602ab6e4dd3e11b274ce814`](https://github.com/hakiimm8/arayaweb/commit/e8669932878a97df7602ab6e4dd3e11b274ce814).
-- **Deployment:** [Pages run 37782440114](https://github.com/hakiimm8/arayaweb/actions/runs/37782440114), succeeded.
+- **Website-content commit:** [`b51bc47999c7267153313e83f675a3e31d602043`](https://github.com/hakiimm8/arayaweb/commit/b51bc47999c7267153313e83f675a3e31d602043).
+- **Deployment:** [Pages run 37867253415](https://github.com/hakiimm8/arayaweb/actions/runs/37867253415), succeeded.
 - **Production:** https://arayainternusa.co.id/araya/ remains unchanged.
 - **Design:** original Araya artwork and orange/charcoal/white Space Grotesk styling.
 - **Publication:** only `public/`; all five pages intentionally `noindex, nofollow`.
@@ -23,7 +23,7 @@ WhatsApp is owner-supplied +62 81326396262, linked as https://wa.me/628132639626
 
 ## Release history
 
-All entries below were recorded on 8 October 2026. Commits/runs identify the evidence more precisely than inferred times.
+The initial entries were recorded on 8 October 2026; subsequent navigation work is listed below them. Commits/runs identify the evidence more precisely than inferred times.
 
 | Commit | Change | Deployment evidence |
 | --- | --- | --- |
@@ -35,6 +35,9 @@ All entries below were recorded on 8 October 2026. Commits/runs identify the evi
 | `5495ed6` | Original transparent logo restored unchanged, original lockup proportions corrected; rejected SVG removed. | [37778054483](https://github.com/hakiimm8/arayaweb/actions/runs/37778054483), succeeded. |
 | `7f169d7` | Marine/industrial pages, homepage scopes, initial product portfolios/images, CSS content-hash URL. | [37781023786](https://github.com/hakiimm8/arayaweb/actions/runs/37781023786), succeeded. |
 | `e866993` | Researched dedicated brand guides, product indexes, profiles, applications, enquiry briefs and accessible FAQs. | [37782440114](https://github.com/hakiimm8/arayaweb/actions/runs/37782440114), succeeded. |
+| `b34794b` | Consolidated documentation index, release history and current-state notes. | Documentation-only; public artifact unchanged. |
+| `030a205` | Separate Noris/ComAp header links and homepage buttons. Header arrangement superseded by the following owner request; separate homepage buttons retained. | [37866938106](https://github.com/hakiimm8/arayaweb/actions/runs/37866938106), succeeded; published navigation checks passed. |
+| `b51bc47` | Brand Partners dropdown containing separate Noris/ComAp links; header/footer links generated from shared brand data. | [37867253415](https://github.com/hakiimm8/arayaweb/actions/runs/37867253415), succeeded; published dropdown checks passed. |
 
 The early navy design concepts and two generated logo attempts were not used in the current site. Preserve the restored original symbol and lettering.
 
@@ -49,8 +52,11 @@ The early navy design concepts and two generated logo attempts were not used in 
 | Interaction | Homepage → Noris → ComAp passed; product-index anchors reached content below sticky header; FAQs opened/closed with Enter; WhatsApp destinations matched owner number. |
 | Correction | Mobile application text initially occupied a narrow column. Grid placement fixed; repeat checks confirmed readable 299px content width at 390px. |
 | Earlier service release | All five routes checked at desktop/mobile widths; homepage → marine → ComAp and mobile menu Escape closing passed. |
+| Brand Partners dropdown | Local and published checks across all five routes at 1280px, 1024px and 390px passed: destinations, opening by click/Enter, Escape focus return, outside-click closing, mobile close after navigation, independent homepage buttons and no-JavaScript navigation. No overflow/page/console/HTTP errors. |
 
 Local evidence is retained as `brand-guides-published-{noris,comap}-{1280,390}.png` and corresponding product/application/FAQ screenshots. Earlier five-route evidence uses `project-details-published-`. Full local verification notes and scripts are retained by the owner, outside this repository.
+
+Latest navigation screenshots use `brand-dropdown-published-{1280,1024,390}.png`. The owner selected Brand Partners for future expansion; Noris and ComAp remain individual entries and dedicated pages. Native details/summary supplies the dropdown, with scripted closing/focus behaviour. JavaScript URLs now include a content hash as well as CSS URLs. Follow [Brand maintenance](BRAND-MAINTENANCE.md) to add a future partner; homepage featured cards are maintained separately.
 
 ## Evidence limits and open work
 

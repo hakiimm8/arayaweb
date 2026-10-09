@@ -6,7 +6,7 @@ Preview: https://hakiimm8.github.io/arayaweb/
 
 Saved audit findings, design decisions, verification results and next steps: [Project notes](docs/PROJECT-NOTES.md).
 
-Start with the [documentation index](docs/README.md), [progress/release record](docs/PROGRESS.md) and [content sources](docs/CONTENT-SOURCES.md). Latest website-content release is `e866993`; later documentation commits leave its public artifact unchanged.
+Start with the [documentation index](docs/README.md), [progress/release record](docs/PROGRESS.md) and [content sources](docs/CONTENT-SOURCES.md). Latest website-content release is `b51bc47`; later documentation commits leave its public artifact unchanged.
 
 ## Files
 
@@ -16,6 +16,8 @@ Start with the [documentation index](docs/README.md), [progress/release record](
 - `.github/workflows/pages.yml`: publishes `public/` on push to main or manual dispatch. No PR triggers.
 
 To preview locally, serve `public/` with a static HTTP server. WordPress and PHP are not required for this preview.
+
+The **Brand Partners** dropdown and footer brand links are generated from `BRANDS` in `tools/brand_profiles.py`. See [adding a future partner](docs/BRAND-MAINTENANCE.md). The homepage has individual Noris and ComAp buttons.
 
 ## Scope and sources
 
