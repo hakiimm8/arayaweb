@@ -1,179 +1,193 @@
-"""Build the homepage, brand pages and service pages using a shared shell."""
+"""Build the homepage, service pages and brand guides using a shared shell."""
 from pathlib import Path
 from html import escape
+from urllib.parse import quote
 import json
 import hashlib
 from brand_profiles import BRANDS
 from brand_pages import brand_content
+from site_content import SERVICES, CLIENTS, BRAND_GROUPS, CAPABILITIES
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 BASE = "https://hakiimm8.github.io/arayaweb/"
+PRODUCTION = "https://arayainternusa.co.id/araya/"
 ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>'
 CSS_VERSION = hashlib.sha256((PUBLIC / 'assets/site.css').read_bytes()).hexdigest()[:10]
 JS_VERSION = hashlib.sha256((PUBLIC / 'assets/site.js').read_bytes()).hexdigest()[:10]
+EMAIL = "cs@arayainternusa.com"
+MAP = "https://www.google.com/maps/search/?api=1&query=" + quote("Gateway Citra Harmoni RKG 32-33, Taman, Sidoarjo")
 
 
-def shell(title, description, content, route=""):
+def whatsapp(topic="a project"):
+    return "https://wa.me/6281326396262?text=" + quote(f"Hello Araya, I would like to discuss {topic}.")
+
+
+def organization():
+    return {
+        "@type": "ProfessionalService", "@id": BASE + "#organization",
+        "name": "PT Araya Internusa", "alternateName": "Araya Internusa", "url": PRODUCTION,
+        "logo": BASE + "assets/images/araya-logo.png", "image": BASE + "assets/images/og-araya.jpg",
+        "description": "Marine, industrial and automation engineering company in Sidoarjo, Indonesia: repair, retrofit, supply and system integration since 2009.",
+        "email": EMAIL, "telephone": "+62-31-7877990", "foundingDate": "2009",
+        "founder": {"@type": "Person", "name": "Arif Fatkur Rohman"},
+        "address": {"@type": "PostalAddress", "streetAddress": "Gateway Citra Harmoni RKG 32–33", "addressLocality": "Taman, Sidoarjo",
+                    "addressRegion": "Jawa Timur", "postalCode": "61257", "addressCountry": "ID"},
+        "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "08:00", "closes": "17:00"},
+        "areaServed": {"@type": "Country", "name": "Indonesia"},
+        "knowsAbout": ["Marine automation", "Ship electrical systems", "Generator synchronisation", "PLC and SCADA", "Industrial machinery repair", "Crane repair", "Hazardous-area electrical equipment", "Noris", "ComAp"],
+    }
+
+
+def breadcrumb(route, name):
+    return {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": BASE},
+        {"@type": "ListItem", "position": 2, "name": name, "item": BASE + route}]}
+
+
+def shell(title, description, content, route="", schema=()):
     prefix = "../" if route else "./"
     home = prefix + "index.html"
     brand_links = ''.join(f'<li><a href="{prefix}{key}/">{escape(data["name"])}</a></li>' for key, data in BRANDS.items())
     brand_footer_links = ''.join(f'<a href="{prefix}{key}/">{escape(data["name"])}</a>' for key, data in BRANDS.items())
+    service_footer_links = ''.join(f'<a href="{prefix}{key}/">{escape(data["name"])}</a>' for key, data in SERVICES.items())
     def nav(label, target):
         return f'<a href="{home}{target}">{label}</a>'
-    schema = {
-        "@context": "https://schema.org", "@type": "Organization",
-        "name": "PT Araya Internusa", "url": "https://arayainternusa.co.id/araya/",
-        "logo": BASE + "assets/images/araya-logo-original.png",
-        "email": "cs@arayainternusa.com", "telephone": "+62-31-7877990",
-    }
     return f'''<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js')</script>
   <title>{escape(title)}</title>
   <meta name="description" content="{escape(description, quote=True)}">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#1e2023">
   <link rel="canonical" href="{BASE}{route}">
+  <meta property="og:site_name" content="PT Araya Internusa">
   <meta property="og:title" content="{escape(title, quote=True)}">
   <meta property="og:description" content="{escape(description, quote=True)}">
   <meta property="og:type" content="website"><meta property="og:url" content="{BASE}{route}">
-  <meta property="og:image" content="{BASE}assets/images/ship.webp">
+  <meta property="og:image" content="{BASE}assets/images/og-araya.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="{prefix}assets/images/favicon.png">
   <link rel="preload" href="{prefix}assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{prefix}assets/site.css?v={CSS_VERSION}">
   <script src="{prefix}assets/site.js?v={JS_VERSION}" defer></script>
-  <script type="application/ld+json">{json.dumps(schema)}</script>
+  <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": [organization(), *schema]}, ensure_ascii=False)}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="utility"><div class="container utility-inner"><span>Gateway Citra Harmoni · Sidoarjo, Indonesia</span><a href="mailto:cs@arayainternusa.com">cs@arayainternusa.com</a><a href="tel:+62317877990">+62 (031) 7877990</a></div></div>
+  <div class="utility"><div class="container utility-inner"><span>Gateway Citra Harmoni · Sidoarjo, Indonesia · Mon–Sat 08.00–17.00</span><a href="mailto:{EMAIL}">{EMAIL}</a><a href="tel:+62317877990">+62 (031) 7877990</a></div></div>
   <div class="container navigation">
-    <a class="brand" href="{home}" aria-label="PT Araya Internusa home"><img src="{prefix}assets/images/araya-logo-original.png" alt="PT Araya Internusa" width="291" height="52"></a>
+    <a class="brand" href="{home}" aria-label="PT Araya Internusa home"><img src="{prefix}assets/images/araya-logo-transparent.png" alt="PT Araya Internusa" width="238" height="52"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation"><span>Menu</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
-      {nav('Home', '')}{nav('About Us', '#about')}{nav('Our Services', '#services')}<details class="brand-menu"><summary>Brand Partners<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><ul class="brand-dropdown">{brand_links}</ul></details>{nav('Our Projects', '#projects')}
+      {nav('Home', '')}{nav('About Us', '#about')}{nav('Our Services', '#services')}<details class="brand-menu"><summary>Brand Partners<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><ul class="brand-dropdown">{brand_links}</ul></details>{nav('Our Clients', '#clients')}
       <a class="nav-contact" href="{home}#contact">Contact Us {ARROW}</a>
     </nav>
   </div>
 </header>
 <main id="main">{content}</main>
 <section class="contact" id="contact" aria-labelledby="contact-heading">
-  <div class="container contact-intro"><div><p class="eyebrow">GET IN TOUCH</p><h2 id="contact-heading">Let’s find the right solution.</h2><p>Tell us about your equipment, application, and project location.</p></div><a class="button" href="mailto:cs@arayainternusa.com">Discuss your project {ARROW}</a></div>
+  <div class="container contact-intro"><div><p class="eyebrow">GET IN TOUCH</p><h2 id="contact-heading">Let’s find the right solution.</h2><p>Send the equipment model, a nameplate photo and the problem or change you need.</p></div><div class="contact-actions"><a class="button" href="{whatsapp()}">Chat on WhatsApp {ARROW}</a><a class="button button-outline" href="mailto:{EMAIL}">Email our team {ARROW}</a></div></div>
   <div class="container footer-grid">
-    <div class="footer-company"><img src="{prefix}assets/images/araya-logo-original.png" alt="PT Araya Internusa" width="291" height="52" loading="lazy"><p>Total solutions for engineering and automation.</p><a class="text-link light" href="https://arayainternusa.co.id/araya/">Visit our current website {ARROW}</a></div>
-    <div><h3>Explore Araya</h3><a href="{home}#about">About Us</a><a href="{prefix}marine/">Marine projects</a><a href="{prefix}industrial/">Industrial projects</a>{brand_footer_links}</div>
-    <div><h3>Office Address</h3><p>Gateway Citra Harmoni RKG 32–33<br>Taman, Sidoarjo<br>Jawa Timur 61257, Indonesia</p></div>
-    <div><h3>Contact Us</h3><a href="mailto:cs@arayainternusa.com">cs@arayainternusa.com</a><a href="tel:+62317877990">+62 (031) 7877990</a><a href="https://wa.me/6281326396262">WhatsApp: +62 813 2639 6262</a><p class="contact-note">Share your system details with our team.</p></div>
+    <div class="footer-company"><img src="{prefix}assets/images/araya-logo-transparent.png" alt="PT Araya Internusa" width="238" height="52" loading="lazy"><p>Marine, industrial and automation engineering across Indonesia since 2009.</p><a class="text-link light" href="{PRODUCTION}">Visit our current website {ARROW}</a></div>
+    <div><h3>Explore Araya</h3><a href="{home}#about">About Us</a>{service_footer_links}{brand_footer_links}<a href="{home}#clients">Our Clients</a></div>
+    <div><h3>Office Address</h3><p><a href="{MAP}">Gateway Citra Harmoni RKG 32–33<br>Taman, Sidoarjo<br>Jawa Timur 61257, Indonesia</a></p><p class="contact-note">Mon–Sat, 08.00–17.00 WIB</p></div>
+    <div><h3>Contact Us</h3><a href="mailto:{EMAIL}">{EMAIL}</a><a href="tel:+62317877990">+62 (031) 7877990</a><a href="{whatsapp()}">WhatsApp: +62 813 2639 6262</a><p class="contact-note">Share your system details with our team.</p></div>
   </div>
 </section>
 <footer class="copyright"><div class="container"><span>© 2026 PT Araya Internusa.</span><span>Design preview · Current website remains live</span></div></footer>
 </body></html>'''
 
 
-SECTORS = {
-    'marine': {
-        'name': 'Marine', 'title': 'Marine Electrical & Mechanical Services Indonesia | Araya Internusa',
-        'description': 'Marine fire alarms, AMS, engine overhaul and control, generator synchronisation, tank monitoring, navigation, steering and system retrofits with Araya Internusa.',
-        'heading': 'Marine engineering.<br>From machinery to control.',
-        'intro': 'Electrical, mechanical, and automation projects for onboard systems.',
-        'image': 'team.webp', 'alt': 'Araya technicians working around machinery in a vessel engine room',
-        'overview': 'A vessel project can involve machinery, electrical equipment, instruments, and the controls that connect them. Araya brings these requirements into one project conversation—from a faulty sensor to an engine overhaul or system retrofit.',
-        'groups': [
-            ('alarms', 'Fire alarms & AMS', 'Fire alarm systems, general alarms, and alarm monitoring systems (AMS). Discuss fault finding, signal monitoring, alarm displays, and replacement or retrofit requirements.'),
-            ('engines', 'Engine overhaul & control', 'Mechanical overhaul requirements alongside engine monitoring, protection, and control. Share the engine model, condition, symptoms, and existing control arrangement.'),
-            ('generators', 'Generator synchronisation & auto start/stop', 'Synchronising generators, automatic start/stop, load sharing, and power management. Define the generator ratings, operating sequence, and switchboard interfaces.'),
-            ('automation', 'Electrical panels, PLC & SCADA', 'Control and electrical panels, PLC logic, HMI operator interfaces, and SCADA monitoring. Bring together equipment status, alarms, and operating commands.'),
-            ('monitoring', 'Water level & cargo monitoring', 'Water level sensors, tank-level monitoring, and cargo monitoring systems. Discuss measuring points, sensor signals, alarm thresholds, and display requirements.'),
-            ('navigation', 'Navigation, steering & manoeuvring', 'Navigation equipment and steering or manoeuvring controls, including controllable-pitch propeller and bow-thruster systems where applicable to the vessel.'),
-            ('cranes', 'Cranes & deck equipment', 'Deck-crane mechanical and electrical requirements, including control panels, operating interfaces, and fault investigation. Start with the crane model and the work required.'),
-            ('retrofit', 'System retrofit & integration', 'Updating ageing systems, replacing obsolete control equipment, and integrating new instruments or interfaces with retained machinery. Discuss the existing drawings and shutdown window.'),
-        ],
-        'enquiry': 'Vessel name/type, location, engine or equipment models, fault symptoms, photographs, wiring drawings, and the intended maintenance or retrofit window.',
-    },
-    'industrial': {
-        'name': 'Industrial', 'title': 'Industrial Machinery & Automation Services Indonesia | Araya Internusa',
-        'description': 'Industrial machinery and crane supply and repair, electrical panels, motor controls, PLC/SCADA, instrumentation and generator control projects with Araya Internusa.',
-        'heading': 'Industrial equipment.<br>Connected by engineering.',
-        'intro': 'Machinery, electrical systems, and automation for industrial operations.',
-        'image': 'industrial.webp', 'alt': 'Industrial electrical equipment from Araya’s original service photography',
-        'overview': 'Industrial work starts with the machine and the process it serves. Araya’s project scopes bring together machinery supply and repair, cranes, electrical equipment, and the automation used to operate and monitor them.',
-        'groups': [
-            ('machinery', 'Industrial machinery supply & repair', 'CNC lathes and milling machines, wire-cut and EDM machines, cutting equipment, and other industrial machinery. Discuss the machine condition and repair or replacement scope.'),
-            ('cranes', 'Crane supply & repair', 'Overhead, portal, slewing, and luffing cranes. Discuss the mechanical condition, electrical equipment, control system, and operating requirements of the installation.'),
-            ('electrical', 'Electrical panels & motor controls', 'Electrical panels, MV/LV switchboards, motor-control centres, soft starters, and variable-frequency drives. Define the loads, motor ratings, and operating sequence.'),
-            ('automation', 'PLC, HMI, SCADA & instrumentation', 'Machine and process control, operator interfaces, supervisory monitoring, and instrument signals. Discuss the PLC platform, I/O list, process requirements, and existing software.'),
-            ('power', 'Generator control & system retrofit', 'Generator control, automatic start/stop, synchronisation, and load-sharing requirements, alongside upgrades to existing electrical and automation systems.'),
-        ],
-        'enquiry': 'Site location, machine or generator model, equipment ratings, process description, fault symptoms, electrical drawings, and available PLC/HMI project files.',
-    },
-}
+def srcset(variants, prefix="./"):
+    return ', '.join(f'{prefix}assets/images/{name} {width}w' for name, width in variants)
 
 
-HOME = f'''
+def home():
+    cards = ''.join(f'''<a class="service-card" href="./{key}/"><img src="./assets/images/{s['card_image']}"{f' srcset="{srcset(s["card_variants"])}" sizes="(max-width: 680px) 100vw, 33vw"' if s.get('card_variants') else ''} alt="{escape(s['card_alt'], quote=True)}" width="{s['card_width']}" height="{s['card_height']}" loading="lazy"><div class="service-body"><span class="service-number">0{i}</span><h3>{escape(s['name'])}</h3><p>{escape(s['summary'])}</p><span class="card-link">Explore {escape(s['short'])} services {ARROW}</span></div></a>''' for i, (key, s) in enumerate(SERVICES.items(), 1))
+    capabilities = ''.join(f'<a href="./{page}/#{anchor}">{escape(label)}{ARROW}</a>' for label, page, anchor in CAPABILITIES)
+    clients = ''.join(f'<li><img src="./assets/images/{c["logo"]}" alt="{escape(c["name"], quote=True)}" width="{c["width"]}" height="{c["height"]}" loading="lazy"></li>' for c in CLIENTS)
+    names = ', '.join(c['name'] for c in CLIENTS[:-1]) + ' and ' + CLIENTS[-1]['name']
+    groups = ''.join(f'<div><h3>{escape(title)}</h3><p>{escape(" · ".join(brands))}</p></div>' for title, brands in BRAND_GROUPS)
+    return f'''
 <section class="hero" aria-labelledby="hero-heading">
-  <img class="hero-photo" src="./assets/images/ship.webp" alt="Passenger vessel alongside a quay, from Araya’s marine project photographs" width="1400" height="840" fetchpriority="high">
+  <img class="hero-photo" src="./assets/images/ship-1400.webp" srcset="{srcset((("ship-800.webp", 800), ("ship-1400.webp", 1400)))}" sizes="100vw" alt="PELNI passenger vessel alongside a quay, from Araya’s marine project photographs" width="1400" height="784" fetchpriority="high">
   <div class="hero-shade"></div>
-  <div class="container hero-content"><p class="eyebrow">PT ARAYA INTERNUSA</p><h1 id="hero-heading">Engineering &amp;<br>automation solutions<br><span>in Indonesia.</span></h1><p class="hero-description">Marine. Industrial. Automation.<br>Noris and ComAp solutions, with a local team to discuss your requirements.</p><div class="hero-actions"><a class="button" href="./noris/">Explore Noris {ARROW}</a><a class="button button-outline" href="./comap/">Explore ComAp {ARROW}</a><a class="button button-outline" href="#contact">Contact our team {ARROW}</a></div></div>
-  <div class="hero-index" aria-hidden="true"><span>01</span> / MARINE &amp; AUTOMATION</div>
+  <div class="container hero-content"><p class="eyebrow">PT ARAYA INTERNUSA</p><h1 id="hero-heading">Marine, industrial &amp;<br>automation engineering<br><span>across Indonesia.</span></h1><p class="hero-description">We repair, retrofit, supply and integrate the systems that keep vessels and plants running, from engine room to control room.</p><div class="hero-actions"><a class="button" href="{whatsapp()}">Discuss your project {ARROW}</a><a class="button button-outline" href="#services">Our services {ARROW}</a></div></div>
+  <div class="hero-index" aria-hidden="true"><span>1,500+</span> / PROJECTS SINCE 2009</div>
 </section>
-<section class="feature-strip" aria-label="Our approach"><div class="container feature-grid">
-  <div><span class="feature-number">01</span><div><h2>Engineering solutions</h2><p>Start with your system and application requirements.</p></div></div>
-  <div><span class="feature-number">02</span><div><h2>Specialist brands</h2><p>Explore Noris automation and ComAp control solutions.</p></div></div>
-  <div><span class="feature-number">03</span><div><h2>Local conversation</h2><p>Connect with our team in Sidoarjo, Indonesia.</p></div></div>
+<section class="feature-strip" aria-label="Why Araya"><div class="container feature-grid">
+  <div><span class="feature-number">01</span><div><h2>6-month work guarantee</h2><p>Every completed project is covered for six months after handover.</p></div></div>
+  <div><span class="feature-number">02</span><div><h2>Specialist backup</h2><p>Technical backup from HIT (Germany) and our Noris and ComAp partners.</p></div></div>
+  <div><span class="feature-number">03</span><div><h2>One engineering team</h2><p>Mechanical, electrical and automation work, with one point of contact.</p></div></div>
 </div></section>
 <section class="section about" id="about"><div class="container about-grid">
   <div class="about-media"><img src="./assets/images/team.webp" alt="Araya technicians working together in a vessel’s engine room" width="600" height="600" loading="lazy"><div class="since"><strong>2009</strong><span>Where our story began</span></div></div>
-  <div><p class="eyebrow">WELCOME TO PT ARAYA INTERNUSA</p><h2>Total solutions for<br>engineering &amp; automation.</h2><p class="lead">Built on a passion for automation. Focused on the needs of your operation.</p><p>Araya began in 2009 as CV Araya Internusa, founded by Arif Fatkur Rohman. Our work brings together marine, industrial, and automation engineering.</p><p>From understanding an existing system to discussing a new installation, the conversation starts with the problem you need to solve.</p><div class="scope-list"><span>Marine</span><span>Industrial</span><span>Automation</span></div><a class="text-link" href="#contact">Get in touch {ARROW}</a></div>
+  <div><p class="eyebrow">ABOUT PT ARAYA INTERNUSA</p><h2>Local engineers.<br>Total solutions.</h2><p class="lead">Repair, modification, upgrade and retrofit for marine and industrial systems, delivered by an Indonesian team.</p><p>Araya was founded in 2009 as CV Araya Internusa by Arif Fatkur Rohman. Indonesia’s marine sector relied heavily on foreign expertise despite strong local talent, and Araya set out to change that.</p><p>Today our Sidoarjo-based team works across Sumatra, Jawa, Kalimantan, Sulawesi and Papua. We also extend the life of obsolete or end-of-sale equipment with practical, reliable solutions.</p><div class="scope-list"><span>Marine</span><span>Industrial</span><span>Automation &amp; electrical</span></div><p class="leaders"><strong>Leadership:</strong> Arif Fatkur Rohman, S.T., M.MT (Founder &amp; Director) · M Rosul Akbar (Manager) · Anjas Budiarso (Manager)</p></div>
 </div></section>
 <section class="section section-muted" id="services"><div class="container">
-  <div class="section-heading"><div><p class="eyebrow">OUR SERVICES</p><h2>Engineering for<br>the systems you rely on.</h2></div><p>Discuss your requirements across marine systems, industrial equipment, and automation.</p></div>
-  <div class="service-grid">
-    <a class="service-card" href="./marine/"><img src="./assets/images/marine.webp" alt="Technical inspection of marine engine equipment" width="600" height="690" loading="lazy"><div class="service-body"><span class="service-number">01</span><h3>Marine</h3><p>Electrical, mechanical, and automation work for vessel systems.</p><span class="card-link">Explore marine services {ARROW}</span></div></a>
-    <a class="service-card" href="./industrial/"><img src="./assets/images/industrial.webp" alt="Industrial electrical installation, from Araya’s existing service imagery" width="600" height="500" loading="lazy"><div class="service-body"><span class="service-number">02</span><h3>Industrial</h3><p>Machinery, cranes, electrical panels, and motor controls.</p><span class="card-link">Explore industrial services {ARROW}</span></div></a>
-    <a class="service-card" href="./industrial/#automation"><img src="./assets/images/control-room.webp" alt="Marine control console with a Noris monitoring display" width="1400" height="840" loading="lazy"><div class="service-body"><span class="service-number">03</span><h3>Automation</h3><p>PLC, HMI, SCADA, instrumentation, and system retrofit.</p><span class="card-link">Explore automation services {ARROW}</span></div></a>
-  </div>
+  <div class="section-heading"><div><p class="eyebrow">WHAT WE DO</p><h2>Three disciplines.<br>One engineering team.</h2></div><p>Most systems combine machinery, electrical power and controls. We handle all three, so one team diagnoses the fault and delivers the fix.</p></div>
+  <div class="service-grid">{cards}</div>
+  <div class="capabilities"><h3>Common requests</h3><nav class="capability-list" aria-label="Common requests">{capabilities}</nav></div>
+</div></section>
+<section class="section projects" id="clients"><div class="container">
+  <div class="section-heading"><div><p class="eyebrow">OUR CLIENTS</p><h2>Trusted by Indonesia’s<br>maritime &amp; energy sectors.</h2></div><p>Passenger and cargo fleets, port services, energy facilities, shipyards and naval vessels rely on our engineers.</p></div>
+  <div class="project-reach"><div class="project-total"><strong>1,500+</strong><span>projects across Indonesia</span></div><div class="project-coverage"><h3>Across the archipelago</h3><ul><li>Sumatra</li><li>Jawa</li><li>Kalimantan</li><li>Sulawesi</li><li>Papua</li></ul></div></div>
+  <ul class="client-logos" aria-label="Selected clients">{clients}</ul>
+  <p class="client-note">Selected clients: {escape(names)}.</p>
 </div></section>
 <section class="section" id="brands"><div class="container">
-  <div class="section-heading"><div><p class="eyebrow">OUR BRAND PORTFOLIOS</p><h2>Specialist solutions.<br>A local point of contact.</h2></div><p>PT Araya Internusa distributes Noris and ComAp solutions in Indonesia. Talk to us about your equipment and application.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">BRAND PARTNERS &amp; EQUIPMENT</p><h2>Specialist partners.<br>Multi-brand expertise.</h2></div><p>PT Araya Internusa distributes Noris and ComAp in Indonesia, and works on equipment from many other manufacturers.</p></div>
   <div class="brand-grid">
-    <article class="brand-panel"><div class="brand-name">NORIS<span>NORIS GROUP GmbH</span></div><h3>Instruments &amp; sensors.<br>Marine automation.</h3><p>Speed, temperature, and pressure measurement. Indicators and signal processing. Explore Noris instrumentation, sensors, and marine monitoring solutions with Araya.</p><a class="text-link" href="./noris/">Explore Noris in Indonesia {ARROW}</a></article>
-    <article class="brand-panel"><div class="brand-name">ComAp<span>ENGINE &amp; POWER CONTROL</span></div><h3>Engine control.<br>Power management.<br>Load sharing.</h3><p>Engine monitoring and protection, coordination of generating sources, and load sharing between parallel generators. Discuss your ComAp application with Araya.</p><a class="text-link" href="./comap/">Explore ComAp in Indonesia {ARROW}</a></article>
+    <article class="brand-panel"><div class="brand-name">NORIS<span>NORIS GROUP GmbH</span></div><h3>Instruments &amp; sensors.<br>Marine automation.</h3><p>{escape(BRANDS['noris']['home_summary'])}</p><a class="text-link" href="./noris/">Explore Noris in Indonesia {ARROW}</a></article>
+    <article class="brand-panel"><div class="brand-name">ComAp<span>ENGINE &amp; POWER CONTROL</span></div><h3>Engine control.<br>Power management.<br>Load sharing.</h3><p>{escape(BRANDS['comap']['home_summary'])}</p><a class="text-link" href="./comap/">Explore ComAp in Indonesia {ARROW}</a></article>
   </div>
-</div></section>
-<section class="section projects" id="projects"><div class="container">
-  <div class="section-heading"><div><p class="eyebrow">OUR PROJECTS</p><h2>Project experience<br>across Indonesia.</h2></div><p>From marine environments to industrial systems, our work reaches Sumatra, Jawa, Kalimantan, Sulawesi, and Papua.</p></div>
-  <div class="project-reach"><div class="project-total"><strong>1,500+</strong><span>projects across Indonesia</span></div><div class="project-coverage"><h3>Across the archipelago</h3><ul><li>Sumatra</li><li>Jawa</li><li>Kalimantan</li><li>Sulawesi</li><li>Papua</li></ul></div></div>
-  <div class="project-grid project-scopes">
-    <figure><img src="./assets/images/control-room.webp" alt="Noris monitoring equipment installed in a marine control console" width="1400" height="840" loading="lazy"><figcaption><span>MARINE PROJECTS</span><h3>From engine room to bridge.</h3><p>Electrical, mechanical, and automation scopes for vessel operation.</p><ul><li>Fire alarms, AMS, and water-level or cargo monitoring</li><li>Engine overhaul, engine control, and generator synchronisation</li><li>Auto start/stop, electrical panels, and PLC/SCADA</li><li>Navigation, steering, manoeuvring, cranes, and system retrofit</li></ul><a class="text-link light" href="./marine/">Explore marine project scopes {ARROW}</a></figcaption></figure>
-    <figure><img src="./assets/images/industrial.webp" alt="Industrial electrical installation from Araya’s existing service photography" width="600" height="500" loading="lazy"><figcaption><span>INDUSTRIAL PROJECTS</span><h3>Machinery, power &amp; control.</h3><p>Equipment supply and repair, with electrical and automation systems.</p><ul><li>Industrial machinery, CNC, wire-cut, and EDM equipment</li><li>Crane supply and repair</li><li>Electrical panels, switchboards, motor controls, and drives</li><li>PLC/HMI/SCADA, instrumentation, and generator control</li></ul><a class="text-link light" href="./industrial/">Explore industrial project scopes {ARROW}</a></figcaption></figure>
-  </div>
+  <div class="equipment-brands"><h3>We also work on equipment from</h3><div class="equipment-brand-grid">{groups}</div><p class="trademark-note">Brand names are trademarks of their owners. Brands other than Noris and ComAp show equipment we work on and do not imply a partnership.</p></div>
 </div></section>'''
 
-def sector_content(key, data):
-    rows = ''.join(f'<article class="scope-detail" id="{anchor}"><span class="portfolio-number">0{i}</span><h3>{escape(title)}</h3><p>{escape(body)}</p></article>' for i, (anchor, title, body) in enumerate(data['groups'], 1))
-    other = 'industrial' if key == 'marine' else 'marine'
-    return f'''<section class="brand-hero"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span>{data['name']}</span></nav><p class="eyebrow">{data['name'].upper()} PROJECT SCOPES</p><h1>{data['heading']}</h1><p>{data['intro']}</p><a class="button" href="#project-scopes">Explore our work {ARROW}</a></div></section>
-<section class="section"><div class="container brand-overview"><div><p class="eyebrow">PT ARAYA INTERNUSA</p><h2>Engineering around<br>your equipment.</h2><p class="lead">{data['overview']}</p><p>Tell us what needs to be repaired, replaced, controlled, or monitored. We can discuss the equipment, interfaces, and work required for your installation.</p></div><figure><img src="../assets/images/{data['image']}" alt="{data['alt']}" width="600" height="600" loading="lazy"><figcaption>From Araya’s original engineering and service photography.</figcaption></figure></div></section>
-<section class="section section-muted" id="project-scopes"><div class="container"><p class="eyebrow">THE WORK WE HANDLE</p><h2>Typical {data['name'].lower()} project scopes.</h2><p class="portfolio-intro">A starting point for your enquiry. The scope of work is agreed around your equipment, operating requirements, and site or vessel conditions.</p><div class="scope-details">{rows}</div></div></section>
-<section class="section"><div class="container"><p class="eyebrow">RELEVANT BRAND PORTFOLIOS</p><h2>Connect the project<br>to the right technology.</h2><div class="connection-grid"><a href="../noris/#portfolio"><h3>Noris Group GmbH</h3><p>Instruments, sensors, signal processing, and marine alarm/monitoring systems.</p><span class="text-link">Explore Noris details {ARROW}</span></a><a href="../comap/#portfolio"><h3>ComAp Control</h3><p>Engine control, generator synchronisation, power management, and load sharing.</p><span class="text-link">Explore ComAp details {ARROW}</span></a></div><div class="equipment-note"><h3>Help us understand your project.</h3><p>{data['enquiry']}</p><a class="text-link" href="https://wa.me/6281326396262">Discuss your project on WhatsApp {ARROW}</a></div></div></section>
-<section class="related container"><a class="text-link" href="../{other}/">Explore {other} projects {ARROW}</a><a href="../index.html#projects">Back to our projects</a></section>'''
+
+def sector_content(key, s):
+    rows = ''.join(f'<article class="scope-detail" id="{anchor}"><span class="portfolio-number">{i:02}</span><h3>{escape(title)}</h3><p>{escape(body)}</p></article>' for i, (anchor, title, body) in enumerate(s['groups'], 1))
+    equipment = ''.join(f'<div><dt>{escape(title)}</dt><dd>{escape(" · ".join(brands))}</dd></div>' for title, brands in s['equipment'])
+    featured = ''.join(f'<a href="../{brand}/"><h3>{escape(BRANDS[brand]["name"])}</h3><p>{escape(text)}</p><span class="text-link">Explore {escape(BRANDS[brand]["name"])} details {ARROW}</span></a>' for brand, text in s['featured'])
+    checklist = ''.join(f'<li>{escape(item)}</li>' for item in s['enquiry'])
+    others = ''.join(f'<a class="text-link" href="../{other}/">{escape(SERVICES[other]["name"])} services {ARROW}</a>' for other in SERVICES if other != key)
+    variants = f' srcset="{srcset(s["hero_variants"], "../")}" sizes="(max-width: 680px) 100vw, 45vw"' if s.get('hero_variants') else ''
+    return f'''<section class="brand-hero"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span>{escape(s['name'])}</span></nav><p class="eyebrow">{escape(s['label'].upper())}</p><h1>{s['heading']}</h1><p>{escape(s['intro'])}</p><div class="brand-actions"><a class="button" href="{whatsapp(s['short'] + ' work')}">Discuss your project {ARROW}</a><a class="text-link light" href="#project-scopes">See what we handle {ARROW}</a></div></div></section>
+<section class="section"><div class="container brand-overview"><div><p class="eyebrow">PT ARAYA INTERNUSA</p><h2>{s['scope_heading']}</h2><p class="lead">{escape(s['overview'])}</p><p>Tell us what needs to be repaired, replaced, controlled or monitored. We agree the scope around your equipment, operating requirements and site or vessel conditions.</p></div><figure><img src="../assets/images/{s['hero_image']}"{variants} alt="{escape(s['hero_alt'], quote=True)}" width="{s['hero_width']}" height="{s['hero_height']}" loading="lazy"><figcaption>From Araya’s engineering and service photography.</figcaption></figure></div></section>
+<section class="section section-muted" id="project-scopes"><div class="container"><p class="eyebrow">WHAT WE DO</p><h2>Typical {escape(s['short'])} project scopes.</h2><div class="scope-details">{rows}</div></div></section>
+<section class="section" id="equipment"><div class="container"><p class="eyebrow">EQUIPMENT WE WORK ON</p><h2>Multi-brand experience.</h2><p class="portfolio-intro">A selection of the manufacturers and systems our engineers repair, maintain, supply or integrate.</p><dl class="equipment-list">{equipment}</dl><p class="trademark-note">Brand names are trademarks of their owners and indicate equipment we work on.</p></div></section>
+<section class="section section-muted"><div class="container"><p class="eyebrow">FEATURED PARTNER TECHNOLOGY</p><h2>Specialist brands,<br>supplied locally.</h2><div class="connection-grid">{featured}</div><div class="equipment-note"><h3>What to send us.</h3><ul class="enquiry-checklist">{checklist}</ul><a class="text-link" href="{whatsapp(s['short'] + ' work')}">Send your project details on WhatsApp {ARROW}</a></div></div></section>
+<section class="related container"><div class="related-services">{others}</div><a href="../index.html#services">Back to our services</a></section>'''
+
+
+def write(route, html):
+    folder = PUBLIC / route if route else PUBLIC
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / "index.html").write_text(html, encoding="utf-8")
 
 
 def main():
-    PUBLIC.mkdir(parents=True, exist_ok=True)
-    (PUBLIC / "index.html").write_text(shell("Marine & Industrial Automation Indonesia | PT Araya Internusa", "Engineering and automation solutions in Indonesia. Explore Noris and ComAp distribution, marine engineering, and industrial applications with PT Araya Internusa.", HOME), encoding="utf-8")
+    routes = [""]
+    website = {"@type": "WebSite", "@id": BASE + "#website", "name": "PT Araya Internusa", "url": BASE, "publisher": {"@id": BASE + "#organization"}}
+    write("", shell("Marine & Industrial Automation Engineering | Araya Internusa",
+                    "Marine, industrial and automation engineering in Indonesia since 2009: ship systems, generators, PLC/SCADA, cranes and machinery. Noris and ComAp partner.",
+                    home(), schema=[website]))
+    for key, s in SERVICES.items():
+        service = {"@type": "Service", "name": s['name'] + " engineering services", "serviceType": s['name'], "provider": {"@id": BASE + "#organization"},
+                   "areaServed": {"@type": "Country", "name": "Indonesia"}, "description": s['description']}
+        write(key, shell(s['title'], s['description'], sector_content(key, s), key + '/', [breadcrumb(key + '/', s['name']), service]))
+        routes.append(key + '/')
     for key, data in BRANDS.items():
-        folder = PUBLIC / key
-        folder.mkdir(exist_ok=True)
-        (folder / "index.html").write_text(shell(data['title'], data['description'], brand_content(key, data, ARROW), key + '/'), encoding="utf-8")
-    for key, data in SECTORS.items():
-        folder = PUBLIC / key
-        folder.mkdir(exist_ok=True)
-        (folder / 'index.html').write_text(shell(data['title'], data['description'], sector_content(key, data), key + '/'), encoding='utf-8')
-    print("Built homepage, Noris, ComAp, marine and industrial pages.")
+        faq = {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in data['faqs']]}
+        write(key, shell(data['title'], data['description'], brand_content(key, data, ARROW), key + '/', [breadcrumb(key + '/', data['name']), faq]))
+        routes.append(key + '/')
+    urls = ''.join(f'<url><loc>{BASE}{route}</loc><lastmod>2026-10-09</lastmod></url>' for route in routes)
+    (PUBLIC / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n', encoding="utf-8")
+    print(f"Built {len(routes)} pages and sitemap.xml.")
 
 
 if __name__ == "__main__":

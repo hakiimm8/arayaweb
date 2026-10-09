@@ -42,3 +42,5 @@ Application entries can have a `diagrams` list; current assignments are in APPLI
 ### Product system diagrams
 
 A product may also include `diagram` (file, actual width/height, alt, caption), `flow` (ordered explanation steps) and `diagram_note` (interface or operating context). The shared portfolio renderer places this below both product columns at full row width; noriNet is the first example. The product `source` supplies its diagram credit. `diagram_figure` accepts a brand argument, defaulting to ComAp for application guides; product diagrams use the product page's brand. JavaScript updates the modal source label as well as its URL. Keep only one dialog per page and verify both brand credits when changing shared viewer code.
+
+Company content outside the brand guides lives in `tools/site_content.py`: homepage clients, common requests, multi-brand equipment and service pages. Adding a service page there adds it to the footer, the sitemap and the homepage service cards.

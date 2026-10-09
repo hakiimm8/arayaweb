@@ -104,3 +104,17 @@ Source: [Noris remote access and telemetry](https://www.noris-group.com/products
 | `noris-norinet-system.webp` | [System overview](https://www.noris-group.com/fileadmin/_processed_/b/3/csm_NORINET_System-Overview_253166fe55.webp) | 1440×960 / 66,548 |
 
 Unchanged manufacturer images, credited and locally hosted with lazy loading, intrinsic dimensions and alt text. These show manufacturer examples, not Araya installations. The original owner PDF remains outside the public repository. Attribution records provenance; it does not establish marketing permission for the production launch.
+
+## Clients, multi-brand equipment and company facts — 9 October 2026
+
+The owner asked the site to show what Araya does and who it works for, rather than per-project case studies, and to make clear that Araya is not limited to its brand partners. All content below comes from the owner's live website (read 9 October 2026). It supersedes the earlier note that no client names, equipment brands or guarantees were added. Confirm it with the owner before production.
+
+- **Client logos** ([homepage](https://arayainternusa.co.id/araya/) "Partners Who Trust Araya Internusa"): PT PELNI, Pelindo Jasa Maritim, Pertamina, TNI Angkatan Laut, PT Armada Cakrawala Esa and PT USDA Seroja Jaya. `tools/prepare_site_assets.py` downloads the six uploads, removes the white background and trims them without redrawing. It also crops the PELNI file's "new logo and tagline" caption.
+- **Equipment brands** (live [marine](https://arayainternusa.co.id/araya/services/marine/), [industrial](https://arayainternusa.co.id/araya/services/industrial/) and [automation](https://arayainternusa.co.id/araya/services/automation/) pages): listed as equipment Araya works on, with a trademark note that they do not imply partnerships. Only Noris and ComAp are presented as distribution partners.
+- **New scopes:** marine safety devices, AC/refrigeration and hydrodynamic test facilities; industrial wire-cut/EDM, NC cutting and casting machines; and a new Automation & Electrical page (protection relays, hazardous-area apparatus, UPS, surge protection, electronic card repair). All come from the same live service pages.
+- **6-month work guarantee and HIT technical backup:** live homepage "Guarantee" and "Experts" blocks.
+- **Company story, mission and leadership** (Arif Fatkur Rohman, M Rosul Akbar, Anjas Budiarso): live [about](https://arayainternusa.co.id/araya/about-us/) and team pages.
+- **Opening hours** (Mon–Sat 08.00–17.00): live site header.
+- **Not used:** live "24/7 support", "Certified and Authorized Partner" and named vessel projects. The first two read as theme copy; the owner preferred not to present individual projects.
+- **Photo edits:** the ship and control-room photos carry a camera date stamp in the bottom 60px. Web variants (`*-800.webp`, `*-1400.webp`) crop it away; originals are kept as source masters.
+

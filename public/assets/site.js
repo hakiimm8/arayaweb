@@ -1,4 +1,4 @@
-document.documentElement.classList.add('js');
+// The `js` class is set inline in <head> so the collapsed mobile menu is styled before first paint.
 // Application links reveal the referenced explanation, including deep links.
 const revealApplication = (hash) => {
   if (!hash || hash === '#') return;

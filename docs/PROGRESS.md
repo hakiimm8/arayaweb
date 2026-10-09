@@ -6,6 +6,18 @@ Read and rendered both pages of the owner's supplied brochure; explained the onb
 
 Updated 9 October 2026, Asia/Jakarta. Historical session evidence; no ongoing monitoring or fresh production audit is implied.
 
+## Content restructure — 9 October 2026 (branch `ccr-6d42fd98-9p3phn`, not yet deployed)
+
+Owner direction: keep the existing design, change content only; English only; show what Araya does and its clients instead of per-project case studies; present Araya as multi-brand, with Noris and ComAp as featured partners; keep the long brand guides but tidy their content; improve SEO. A redesign was trialled and rejected ("too mainstream"); none of it ships.
+
+- **Home:** WhatsApp-first hero CTAs instead of brand buttons, and concrete feature strip (guarantee, specialist backup, one team). About now includes the founding story and leadership. The services section has three cards plus 12 "common requests" deep links. New Our Clients section (logos, 1,500+, regions), and brand partners plus a multi-brand equipment list.
+- **Service pages:** Marine (12 scopes), Industrial (8) and the new Automation & Electrical page (12), each with an "equipment we work on" list, featured partner technology and an enquiry checklist.
+- **Brand guides:** positive wording replaces internal caveats. Fixed enlarge-diagram accessible names and the diagram viewer's default source link.
+- **SEO:** titles ≤60 characters; ProfessionalService/LocalBusiness schema with address and hours; BreadcrumbList, Service and FAQPage schema; 1200×630 JPEG share image; Twitter card; `sitemap.xml`. Preview remains `noindex, nofollow`.
+- **Performance (no visual change):** the `js` class is now set inline, removing the mobile layout shift. Correctly proportioned logo file, responsive hero/card images and correct image dimensions.
+- **Checks:** `python tools/check.py` passed (6 pages). Local screenshots at 1440px and 390px showed no overflow and no console errors. Local Lighthouse mobile: home 100/95/100/66, ComAp 99/96/100/66, CLS 0 (was 0.262). SEO 66 reflects intentional noindex.
+- **Still open from the audit (design decisions deferred):** 9–11px text, orange-on-grey contrast and the "2009" badge contrast.
+
 ## Current release
 
 - **Preview:** https://hakiimm8.github.io/arayaweb/

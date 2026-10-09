@@ -10,7 +10,9 @@ Start with the [documentation index](docs/README.md), [progress/release record](
 
 ## Files
 
-- `public/`: the complete published site, with home, marine, industrial, Noris and ComAp pages.
+- `public/`: the complete published site, with home, marine, industrial, automation & electrical, Noris and ComAp pages, plus `sitemap.xml`.
+- `tools/site_content.py`: company content: service pages, clients, multi-brand equipment lists and homepage common requests.
+- `tools/prepare_site_assets.py`: client logos, date-stamp-free responsive photos, the share image and the proportioned logo.
 - `tools/build.py`: shared HTML template and page copy. Run `python tools/build.py` after editing.
 - `tools/brand_profiles.py` and `tools/brand_pages.py`: researched brand content and dedicated brand-page layout.
 - `tools/comap_applications.py`: 19 sourced application explanations grouped by marine, power generation and smart energy management.
